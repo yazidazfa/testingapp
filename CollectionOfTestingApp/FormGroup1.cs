@@ -18,6 +18,8 @@ namespace CollectionOfTestingApp
     {
         private const string _startStopwatchDisplay = "00:00:00.00";
         private Timer _timer;
+        private string startTime;
+        private string stopTime;
 
         int h, m, s, ms;
         string Firstline { get; set; }
@@ -215,12 +217,17 @@ namespace CollectionOfTestingApp
             }
         }
 
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private bool Comparetext(string value)
         {
             if (value == ClassUrl.startUrl)
             {
                 _timer.Start();
-
+                startTime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
             }
             return true;
         }
@@ -234,7 +241,7 @@ namespace CollectionOfTestingApp
                     if (value == ClassUrl.stopUrl)
                     {
                         _timer.Stop();
-
+                        stopTime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
                     }
                     else
                     {
@@ -252,6 +259,11 @@ namespace CollectionOfTestingApp
             string title = "Submit";
 
             MessageBox.Show(message, title);
+        }
+
+        private void WriteCSV()
+        {
+
         }
     }
 }

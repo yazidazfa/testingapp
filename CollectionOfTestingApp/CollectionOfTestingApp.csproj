@@ -13,8 +13,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
-	<Nullable>enable</Nullable>
-	<LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,12 +84,6 @@
     </Compile>
     <Compile Include="FormGroup1.Designer.cs">
       <DependentUpon>FormGroup1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormGroup8.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormGroup8.Designer.cs">
-      <DependentUpon>FormGroup8.cs</DependentUpon>
     </Compile>
     <Compile Include="model\ClassList.cs" />
     <Compile Include="Program.cs" />

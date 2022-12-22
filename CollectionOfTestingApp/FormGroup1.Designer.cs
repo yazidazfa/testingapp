@@ -40,6 +40,7 @@ namespace CollectionOfTestingApp
             this.btnStart = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbStartUrl
@@ -141,10 +142,21 @@ namespace CollectionOfTestingApp
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(332, 499);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(120, 50);
+            this.btnExport.TabIndex = 5;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // FormGroup1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.btnStart);
@@ -182,5 +194,6 @@ namespace CollectionOfTestingApp
         private Button btnStart;
         private Button btnSubmit;
         private Button btnClear;
+        private Button btnExport;
     }
 }
