@@ -9,8 +9,12 @@ using System.Timers;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 using Fiddler;
 using Timer = System.Timers.Timer;
+using System.IO;
+using CollectionOfTestingApp;
+using CollectionOfTestingApp.model;
 
 namespace CollectionOfTestingApp
 {
@@ -18,8 +22,6 @@ namespace CollectionOfTestingApp
     {
         private const string _startStopwatchDisplay = "00:00:00.00";
         private Timer _timer;
-        private string startTime;
-        private string stopTime;
 
         int h, m, s, ms;
         string Firstline { get; set; }
@@ -66,34 +68,9 @@ namespace CollectionOfTestingApp
 
         private void OnTimerElapse(object sender, ElapsedEventArgs e)
         {
-            //Application.Current.Dispatcher.Invoke(() =>
-            //{
-            //    ms += 1;
-            //    if (ms == 100)
-            //    {
-            //        ms = 0;
-            //        s += 1;
-            //    }
-            //    if (s == 60)
-            //    {
-            //        s = 0;
-            //        m += 1;
-            //    }
-            //    if (m == 60)
-            //    {
-            //        m = 0;
-            //        h += 1;
-
-            //    }
-
-            //    StopwatchDisplay.Text = String.Format("{0}:{1}:{2}.{3}", h.ToString().ToString().PadLeft(2, '0'), m.ToString().ToString().PadLeft(2, '0'), s.ToString().ToString().PadLeft(2, '0'), ms.ToString().ToString().PadLeft(2, '0'));
-            //});
-
             this.Invoke((MethodInvoker)delegate {
-
-                // your UI update code here. e.g. this.Close();Label1.Text="something";
                 ms += 1;
-                if (ms == 100)
+                if (ms == 60)
                 {
                     ms = 0;
                     s += 1;
@@ -164,22 +141,15 @@ namespace CollectionOfTestingApp
             }
 
             string Headers = oSession.oRequest.headers.ToString();
-            //string Body = Encoding.UTF8.GetString(oSession.RequestBody);
-            //Firstline = oSession.RequestMethod + " " + oSession.fullUrl + " " + oSession.oRequest.headers.HTTPVersion;
-            //Firstline = oSession.RequestMethod + " " + oSession.fullUrl;
             Firstline = oSession.fullUrl;
             int at = Headers.IndexOf("\r\n");
+
             if (at < 0)
             {
                 return;
             }
-            //string Output = Firstline + Environment.NewLine + Headers.Substring(at + 1);
+
             string Output = Firstline;
-            //if (Body!= null)
-            //{
-            //    Output += Body + Environment.NewLine;
-            //}
-            //appentext(Output);
             Console.WriteLine(Output);
             Comparetext(Firstline);
             Comparestop(Firstline);
@@ -219,7 +189,19 @@ namespace CollectionOfTestingApp
 
         private void btnExport_Click(object sender, EventArgs e)
         {
+            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "CSV|*.csv", ValidateNames = true })
+            {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    var stopwatchData = new List<string>();
+                    stopwatchData.Add("Start URL,Stop URL,Start Time,Stop Time,Stopwatch");
+                    stopwatchData.Add($"{ClassUrl.startUrl},{ClassUrl.stopUrl},{ClassUrl.startTime},{ClassUrl.stopTime},{lblStopwatch.Text}");
 
+                    File.WriteAllLines(sfd.FileName, stopwatchData);
+
+                    MessageBox.Show("Your data has been successfully saved.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
         }
 
         private bool Comparetext(string value)
@@ -227,7 +209,7 @@ namespace CollectionOfTestingApp
             if (value == ClassUrl.startUrl)
             {
                 _timer.Start();
-                startTime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
+                ClassUrl.startTime = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
             }
             return true;
         }
@@ -241,7 +223,7 @@ namespace CollectionOfTestingApp
                     if (value == ClassUrl.stopUrl)
                     {
                         _timer.Stop();
-                        stopTime = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss");
+                        ClassUrl.stopTime = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
                     }
                     else
                     {
@@ -259,11 +241,6 @@ namespace CollectionOfTestingApp
             string title = "Submit";
 
             MessageBox.Show(message, title);
-        }
-
-        private void WriteCSV()
-        {
-
         }
     }
 }

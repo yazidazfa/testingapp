@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+
 namespace CollectionOfTestingApp
 {
     partial class FormGroup1
@@ -84,6 +85,7 @@ namespace CollectionOfTestingApp
             // 
             // btnInstall
             // 
+            this.btnInstall.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInstall.Location = new System.Drawing.Point(12, 501);
             this.btnInstall.Name = "btnInstall";
             this.btnInstall.Size = new System.Drawing.Size(120, 50);
@@ -94,6 +96,7 @@ namespace CollectionOfTestingApp
             // 
             // btnRemove
             // 
+            this.btnRemove.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemove.Location = new System.Drawing.Point(138, 501);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(120, 50);
@@ -104,6 +107,7 @@ namespace CollectionOfTestingApp
             // 
             // btnStop
             // 
+            this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStop.Location = new System.Drawing.Point(652, 499);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(120, 50);
@@ -114,6 +118,7 @@ namespace CollectionOfTestingApp
             // 
             // btnStart
             // 
+            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Location = new System.Drawing.Point(526, 499);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(120, 50);
@@ -124,6 +129,7 @@ namespace CollectionOfTestingApp
             // 
             // btnSubmit
             // 
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmit.Location = new System.Drawing.Point(332, 150);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(120, 50);
@@ -134,6 +140,7 @@ namespace CollectionOfTestingApp
             // 
             // btnClear
             // 
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Location = new System.Drawing.Point(332, 330);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(120, 50);
@@ -144,7 +151,8 @@ namespace CollectionOfTestingApp
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(332, 499);
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExport.Location = new System.Drawing.Point(332, 396);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(120, 50);
             this.btnExport.TabIndex = 5;
@@ -174,7 +182,7 @@ namespace CollectionOfTestingApp
             this.MaximizeBox = false;
             this.Name = "FormGroup1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Collection Of Testing App";
+            this.Text = "Operability Test";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormStopwatch_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

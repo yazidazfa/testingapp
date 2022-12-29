@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Graph>
+<Nodes>
+<Node id="1" name="Component" />
+<Node id="2" name="ConcreteComponent" />
+<Node id="3" name="Decorator" />
+<Node id="4" name="ConcreteDecoratorA" />
+<Node id="5" name="ConcreteDecoratorB" />
+<Node id="6" name="Client" />
+<Node id="7" name="Program" />
+</Nodes>
+<Links>
+<Link origin="2" target="1" />
+<Link origin="3" target="1" />
+<Link origin="4" target="3" />
+<Link origin="5" target="3" />
+</Links>
+</Graph>

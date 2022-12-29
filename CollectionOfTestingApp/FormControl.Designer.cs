@@ -78,8 +78,9 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(216, 42);
             this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
+            this.button7.Text = "Battery Efficiency Test";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -88,8 +89,9 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(216, 42);
             this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
+            this.button6.Text = "Execution Efficiency Test";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -98,8 +100,9 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(216, 42);
             this.button5.TabIndex = 5;
-            this.button5.Text = "button5";
+            this.button5.Text = "CPU RAM Monitoring";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -120,6 +123,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Code Visualization";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -128,8 +132,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(216, 42);
             this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
+            this.button2.Text = "Local Web Stress Test";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
