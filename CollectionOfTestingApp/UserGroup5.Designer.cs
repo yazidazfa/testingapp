@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series61 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series62 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series63 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.textBoxCounter = new System.Windows.Forms.TextBox();
@@ -43,11 +42,11 @@
             this.buttonStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.dgv1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblINET = new MetroFramework.Controls.MetroLabel();
             this.metroProgressBarINET = new MetroFramework.Controls.MetroProgressBar();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -62,6 +61,7 @@
             this.pRAM = new System.Diagnostics.PerformanceCounter();
             this.pINET = new System.Diagnostics.PerformanceCounter();
             this.pCPU = new System.Diagnostics.PerformanceCounter();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
@@ -98,20 +98,10 @@
             this.panel1.Size = new System.Drawing.Size(1777, 1051);
             this.panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(683, 46);
-            this.label1.TabIndex = 44;
-            this.label1.Text = "CPU RAM INTERNET MONITORING";
-            // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(1141, 811);
+            this.metroLabel7.Location = new System.Drawing.Point(1072, 811);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(113, 20);
             this.metroLabel7.TabIndex = 43;
@@ -120,8 +110,7 @@
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.BackColor = System.Drawing.SystemColors.Control;
-            this.metroLabel5.Location = new System.Drawing.Point(304, 219);
+            this.metroLabel5.Location = new System.Drawing.Point(299, 219);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(89, 20);
             this.metroLabel5.TabIndex = 41;
@@ -171,11 +160,32 @@
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(304, 396);
+            this.metroLabel3.Location = new System.Drawing.Point(299, 396);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(162, 20);
             this.metroLabel3.TabIndex = 36;
             this.metroLabel3.Text = "EXPORT DATA TO EXCEL";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Internet";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "RAM";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "CPU";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
             // metroLabel6
             // 
@@ -197,29 +207,8 @@
             this.dgv1.Margin = new System.Windows.Forms.Padding(4);
             this.dgv1.Name = "dgv1";
             this.dgv1.RowHeadersWidth = 51;
-            this.dgv1.Size = new System.Drawing.Size(574, 256);
+            this.dgv1.Size = new System.Drawing.Size(428, 256);
             this.dgv1.TabIndex = 35;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "CPU";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "RAM";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Internet";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
             // 
             // lblINET
             // 
@@ -232,7 +221,7 @@
             // 
             // metroProgressBarINET
             // 
-            this.metroProgressBarINET.Location = new System.Drawing.Point(421, 349);
+            this.metroProgressBarINET.Location = new System.Drawing.Point(424, 349);
             this.metroProgressBarINET.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroProgressBarINET.Name = "metroProgressBarINET";
             this.metroProgressBarINET.Size = new System.Drawing.Size(769, 23);
@@ -241,7 +230,7 @@
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(304, 349);
+            this.metroLabel4.Location = new System.Drawing.Point(299, 349);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(89, 20);
             this.metroLabel4.TabIndex = 32;
@@ -249,28 +238,28 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea21.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea21);
+            legend21.Name = "Legend1";
+            this.chart1.Legends.Add(legend21);
             this.chart1.Location = new System.Drawing.Point(299, 495);
             this.chart1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "CPU";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "RAM";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "INET";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
+            series61.ChartArea = "ChartArea1";
+            series61.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series61.Legend = "Legend1";
+            series61.Name = "CPU";
+            series62.ChartArea = "ChartArea1";
+            series62.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series62.Legend = "Legend1";
+            series62.Name = "RAM";
+            series63.ChartArea = "ChartArea1";
+            series63.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series63.Legend = "Legend1";
+            series63.Name = "INET";
+            this.chart1.Series.Add(series61);
+            this.chart1.Series.Add(series62);
+            this.chart1.Series.Add(series63);
             this.chart1.Size = new System.Drawing.Size(623, 318);
             this.chart1.TabIndex = 31;
             // 
@@ -294,7 +283,7 @@
             // 
             // metroProgressBarRAM
             // 
-            this.metroProgressBarRAM.Location = new System.Drawing.Point(421, 305);
+            this.metroProgressBarRAM.Location = new System.Drawing.Point(424, 305);
             this.metroProgressBarRAM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.metroProgressBarRAM.Name = "metroProgressBarRAM";
             this.metroProgressBarRAM.Size = new System.Drawing.Size(769, 23);
@@ -303,7 +292,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(304, 305);
+            this.metroLabel2.Location = new System.Drawing.Point(299, 305);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(81, 20);
             this.metroLabel2.TabIndex = 27;
@@ -320,7 +309,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(304, 260);
+            this.metroLabel1.Location = new System.Drawing.Point(299, 260);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(83, 20);
             this.metroLabel1.TabIndex = 25;
@@ -347,12 +336,22 @@
             this.pCPU.CounterName = "% Processor Time";
             this.pCPU.InstanceName = "_total";
             // 
-            // UserGroup5
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(299, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(683, 46);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "CPU RAM INTERNET MONITORING";
+            // 
+            // UserGroup9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
-            this.Name = "UserGroup5";
+            this.Name = "UserGroup9";
             this.Size = new System.Drawing.Size(1777, 1051);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

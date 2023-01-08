@@ -35,9 +35,9 @@ namespace CollectionOfTestingApp
             metroProgressBarCPU.Value = (int)fcpu;
             metroProgressBarRAM.Value = (int)fram;
             metroProgressBarINET.Value = (int)finet;
-            lblCPU.Text = string.Format("{0:0.0%}", fcpu);
-            lblRAM.Text = string.Format("{0:0.0%}", fram);
-            lblINET.Text = string.Format("{0:0.0%}", finet);
+            lblCPU.Text = string.Format("{0:0.00}%", fcpu);
+            lblRAM.Text = string.Format("{0:0.00}%", fram);
+            lblINET.Text = string.Format("{0:0.00}%", finet);
             chart1.Series["CPU"].Points.AddY(fcpu);
             chart1.Series["RAM"].Points.AddY(fram);
             chart1.Series["INET"].Points.AddY(finet);

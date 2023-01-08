@@ -274,12 +274,6 @@
     <Compile Include="UserGroup4.Designer.cs">
       <DependentUpon>UserGroup4.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserGroup5.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserGroup5.Designer.cs">
-      <DependentUpon>UserGroup5.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserGroup7.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,6 +285,12 @@
     </Compile>
     <Compile Include="UserGroup8.Designer.cs">
       <DependentUpon>UserGroup8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserGroup5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserGroup5.Designer.cs">
+      <DependentUpon>UserGroup5.cs</DependentUpon>
     </Compile>
     <Compile Include="Worker.cs" />
     <EmbeddedResource Include="FormControl.resx">
@@ -316,14 +316,14 @@
     <EmbeddedResource Include="UserGroup4.resx">
       <DependentUpon>UserGroup4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserGroup5.resx">
-      <DependentUpon>UserGroup5.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserGroup7.resx">
       <DependentUpon>UserGroup7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserGroup8.resx">
       <DependentUpon>UserGroup8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserGroup5.resx">
+      <DependentUpon>UserGroup5.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

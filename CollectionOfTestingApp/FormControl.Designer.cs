@@ -49,10 +49,10 @@
             this.userGroup11 = new CollectionOfTestingApp.UserGroup1();
             this.userGroup31 = new CollectionOfTestingApp.UserGroup3();
             this.userGroup71 = new CollectionOfTestingApp.UserGroup7();
-            this.userGroup51 = new CollectionOfTestingApp.UserGroup5();
             this.userGroup21 = new CollectionOfTestingApp.UserGroup2();
             this.userGroup81 = new CollectionOfTestingApp.UserGroup8();
             this.userGroup41 = new CollectionOfTestingApp.UserGroup4();
+            this.userGroup91 = new CollectionOfTestingApp.UserGroup5();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -278,13 +278,6 @@
             this.userGroup71.Size = new System.Drawing.Size(1577, 1051);
             this.userGroup71.TabIndex = 5;
             // 
-            // userGroup51
-            // 
-            this.userGroup51.Location = new System.Drawing.Point(340, 0);
-            this.userGroup51.Name = "userGroup51";
-            this.userGroup51.Size = new System.Drawing.Size(1777, 1051);
-            this.userGroup51.TabIndex = 6;
-            // 
             // userGroup21
             // 
             this.userGroup21.Location = new System.Drawing.Point(340, 0);
@@ -306,6 +299,13 @@
             this.userGroup41.Size = new System.Drawing.Size(1577, 1051);
             this.userGroup41.TabIndex = 11;
             // 
+            // userGroup91
+            // 
+            this.userGroup91.Location = new System.Drawing.Point(340, 0);
+            this.userGroup91.Name = "userGroup91";
+            this.userGroup91.Size = new System.Drawing.Size(1777, 1051);
+            this.userGroup91.TabIndex = 12;
+            // 
             // FormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -316,7 +316,7 @@
             this.Controls.Add(this.userGroup11);
             this.Controls.Add(this.userGroup31);
             this.Controls.Add(this.userGroup71);
-            this.Controls.Add(this.userGroup51);
+            this.Controls.Add(this.userGroup91);
             this.Controls.Add(this.userGroup21);
             this.Controls.Add(this.userGroup81);
             this.Controls.Add(this.elementHost1);
@@ -359,12 +359,12 @@
         private UserGroup1 userGroup11;
         private UserGroup3 userGroup31;
         private UserGroup7 userGroup71;
-        private UserGroup5 userGroup51;
         private UserGroup2 userGroup21;
         private UserGroup8 userGroup81;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private WpfControlLibrary1.UserControl1 userControl12;
         private UserGroup4 userGroup41;
+        private UserGroup5 userGroup91;
     }
 }
 
