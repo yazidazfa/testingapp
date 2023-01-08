@@ -18,7 +18,7 @@ using CollectionOfTestingApp.model;
 
 namespace CollectionOfTestingApp
 {
-    public partial class FormGroup1 : Form
+    public partial class UserGroup1 : UserControl
     {
         private const string _startStopwatchDisplay = "00:00:00.00";
         private Timer _timer;
@@ -26,7 +26,7 @@ namespace CollectionOfTestingApp
         int h, m, s, ms;
         string Firstline { get; set; }
 
-        public FormGroup1()
+        public UserGroup1()
         {
             InitializeComponent();
 
@@ -93,7 +93,7 @@ namespace CollectionOfTestingApp
 
         private void Installcert()
         {
-            if (!CertMaker.rootCertExists())
+            if (CertMaker.rootCertExists() == false)
             {
                 CertMaker.createRootCert();
                 CertMaker.trustRootCert();
@@ -177,6 +177,11 @@ namespace CollectionOfTestingApp
 
             tbStartUrl.ReadOnly = false;
             tbStopUrl.ReadOnly = false;
+
+            ClassUrl.startUrl = "";
+            ClassUrl.stopUrl = "";
+            ClassUrl.startTime = "";
+            ClassUrl.stopTime = "";
         }
 
         private void FormStopwatch_FormClosed(object sender, FormClosedEventArgs e)
@@ -197,10 +202,21 @@ namespace CollectionOfTestingApp
                     stopwatchData.Add("Start URL,Stop URL,Start Time,Stop Time,Stopwatch");
                     stopwatchData.Add($"{ClassUrl.startUrl},{ClassUrl.stopUrl},{ClassUrl.startTime},{ClassUrl.stopTime},{lblStopwatch.Text}");
 
+
+
                     File.WriteAllLines(sfd.FileName, stopwatchData);
 
                     MessageBox.Show("Your data has been successfully saved.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void FormGroup1_Load(object sender, EventArgs e)
+        {
+            if (CertMaker.rootCertExists() == false)
+            {
+                CertMaker.createRootCert();
+                CertMaker.trustRootCert();
             }
         }
 

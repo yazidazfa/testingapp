@@ -8,17 +8,13 @@ namespace CollectionOfTestingApp.model
 {
     internal class ClassList
     {
-        private List<string>? list = new List<string>();
-        public List<string>? nameList
-        {
-            get
-            {
-                return list;
-            }
-            set
-            {
-                list = value;
-            }
-        }
-    }
+		private string? className;
+
+		public string? ClassName
+		{
+			get { return className; }
+			set { className = value; }
+		}
+
+	}
 }

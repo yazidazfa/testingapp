@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CollectionOfTestingApp
 {
-    public partial class FormGroup6 : Form
+    public partial class UserControl1 : UserControl
     {
-        public FormGroup6()
+        public UserControl1()
         {
             InitializeComponent();
         }

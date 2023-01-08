@@ -9,19 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CollectionOfTestingApp
 {
-    public partial class FormGroup5 : MetroFramework.Forms.MetroForm
+    public partial class UserGroup5 : UserControl
     {
-        public FormGroup5()
+        private int count;
+        public UserGroup5()
         {
             InitializeComponent();
+            count = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            timer.Start();
+            textBoxCounter.Text = "0";
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -39,6 +42,12 @@ namespace CollectionOfTestingApp
             chart1.Series["RAM"].Points.AddY(fram);
             chart1.Series["INET"].Points.AddY(finet);
             dgv1.Rows.Add(fcpu, fram, finet);
+            count++;
+            this.textBoxCounter.Text = count.ToString();
+            if (Convert.ToInt16(textBoxCounter.Text) == 60)
+            {
+                count = 0;
+            }
         }
 
         private void ExportExcel(DataGridView dataGrid, string filename)
@@ -47,27 +56,28 @@ namespace CollectionOfTestingApp
             string Headers = "";
 
             //Export Title
-            for (int j = 0; j<dataGrid.Columns.Count; j++)
+            for (int j = 0; j < dataGrid.Columns.Count; j++)
             {
                 Headers = Headers.ToString() + Convert.ToString(dataGrid.Columns[j].HeaderText) + "\t";
             }
             Output += Headers + "\r\n";
 
             //Export Data
-            for(int i = 0; i < dataGrid.RowCount -1;  i++) 
+            for (int i = 0; i < dataGrid.RowCount - 1; i++)
             {
                 string line = "";
-                for(int j=0;j < dataGrid.Rows[i].Cells.Count; j++)
+                for (int j = 0; j < dataGrid.Rows[i].Cells.Count; j++)
                 {
                     line = line.ToString() + Convert.ToString(dataGrid.Rows[i].Cells[j].Value) + "\t";
                 }
-                Output+= line + "\r\n";
+                Output += line + "\r\n";
             }
+
             Encoding encoding = Encoding.GetEncoding(1254);
             byte[] outputs = encoding.GetBytes(Output);
             FileStream file = new FileStream(filename, FileMode.Create);
             BinaryWriter binary = new BinaryWriter(file);
-            binary.Write(outputs,0,outputs.Length);
+            binary.Write(outputs, 0, outputs.Length);
             binary.Flush();
             binary.Close();
             file.Close();
@@ -78,10 +88,21 @@ namespace CollectionOfTestingApp
             save.Filter = "Excel Documents (*.csv)|.csv";
             save.FileName = "CPU & RAM Monitoring.csv";
 
-            if(save.ShowDialog() == DialogResult.OK)
+            if (save.ShowDialog() == DialogResult.OK)
             {
-                ExportExcel(dgv1,save.FileName);
+                ExportExcel(dgv1, save.FileName);
             }
+        }
+
+        private void buttonStart_Click(object sender, EventArgs e)
+        {
+            timer.Start();
+        }
+
+        private void buttonStop_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
         }
     }
 }
+

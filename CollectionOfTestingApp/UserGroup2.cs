@@ -9,7 +9,7 @@ using System.IO;
 
 namespace CollectionOfTestingApp
 {
-    public partial class FormGroup2 : Form
+    public partial class UserGroup2 : UserControl
     {
         protected Worker worker;
 
@@ -29,7 +29,7 @@ namespace CollectionOfTestingApp
 
         protected readonly string formTitle = "";
 
-        static FormGroup2()
+        static UserGroup2()
         {
             localIPs = new string[] {
                 "192.168",
@@ -53,7 +53,7 @@ namespace CollectionOfTestingApp
             };
         }
 
-        public FormGroup2()
+        public UserGroup2()
         {
             InitializeComponent();
             formTitle = this.Text;
@@ -323,3 +323,4 @@ namespace CollectionOfTestingApp
         }
     }
 }
+
