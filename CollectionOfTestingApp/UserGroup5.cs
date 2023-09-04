@@ -103,6 +103,11 @@ namespace CollectionOfTestingApp
         {
             timer.Stop();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Click \"Start\" button to run the CPU RAM INTERNET MONITORING\n2. Click \"Stop\" button to stop the process\n3. Click \"Export\" button to generate the results into CSV", "Help");
+        }
     }
 }
 

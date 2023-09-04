@@ -62,6 +62,7 @@
             this.diagram1 = new MindFusion.Diagramming.Diagram();
             this.diagram2 = new MindFusion.Diagramming.Diagram();
             this.ClassesData = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             tabControl = new System.Windows.Forms.TabControl();
             tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -254,6 +255,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.lbl_Title);
@@ -280,6 +282,7 @@
             // 
             // btnClear
             // 
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Location = new System.Drawing.Point(267, 23);
             this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
@@ -291,6 +294,7 @@
             // 
             // btnExportDiagram
             // 
+            this.btnExportDiagram.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExportDiagram.Location = new System.Drawing.Point(117, 23);
             this.btnExportDiagram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExportDiagram.Name = "btnExportDiagram";
@@ -302,6 +306,7 @@
             // 
             // btnVisualize
             // 
+            this.btnVisualize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVisualize.Location = new System.Drawing.Point(7, 23);
             this.btnVisualize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVisualize.Name = "btnVisualize";
@@ -374,6 +379,7 @@
             // 
             // btnReset
             // 
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.Location = new System.Drawing.Point(248, 23);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
@@ -385,6 +391,7 @@
             // 
             // btnBrowse
             // 
+            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBrowse.Location = new System.Drawing.Point(7, 23);
             this.btnBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBrowse.Name = "btnBrowse";
@@ -396,6 +403,7 @@
             // 
             // btnExport
             // 
+            this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExport.Location = new System.Drawing.Point(117, 23);
             this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExport.Name = "btnExport";
@@ -412,6 +420,17 @@
             // diagram2
             // 
             this.diagram2.TouchThreshold = 0F;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(1433, 222);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 38);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Help";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserGroup3
             // 
@@ -470,5 +489,6 @@
         private MindFusion.Diagramming.Diagram diagram1;
         private System.Windows.Forms.BindingSource ClassesData;
         private MindFusion.Diagramming.Diagram diagram2;
+        private System.Windows.Forms.Button button1;
     }
 }

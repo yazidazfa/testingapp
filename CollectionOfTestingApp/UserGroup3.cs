@@ -513,5 +513,10 @@ namespace CollectionOfTestingApp
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Click the \"Browse\" button\n2. Select source codes\n3. Click \"Visualize\" button to generate diagrams\n4. Click visualize tab to see the diagrams\n5. Click source code tab to see the source codes\n6. Click \"Reset\" button to reset the input and click \"Clear\" button to clear the diagrams\n7. Click \"Export as csv\" button to generate the results into CSV\n8. Click \"Export as PNG\" to generate the PNG of visualized codes", "Help");
+        }
     }
 }

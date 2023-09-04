@@ -129,7 +129,7 @@ namespace CollectionOfTestingApp
 
             if (result.Count != 0)
             {
-                MessageBox.Show("Done");
+                //MessageBox.Show("Done");
                 richTextBox1.Text = result["Server"];
                 richTextBox2.Text = result["ISP"];
                 richTextBox3.Text = result["IdleLatency"];
@@ -139,6 +139,11 @@ namespace CollectionOfTestingApp
                 richTextBox7.Text = result["J"];
                 richTextBox8.Text = result["PacketLoss"];
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Click \"Start\" button to run the internet speed test\n2. Click \"Export\" button to generate the results into CSV", "Help");
         }
     }
 }

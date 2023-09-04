@@ -220,6 +220,11 @@ namespace CollectionOfTestingApp
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Write the full url of start and stop point of your task\n2. Click submit button to save your the url\n3. Install the SSL certificate by pressing the install button\n4. Click start button to start the network traffic monitoring proccess\n5. Open the start url and the stopwatch will start\n6. Open the stop url and the stopwatch will stop\n7. Click stop button to stop the network traffic monitoring proccess\n8. Uninstall the SSL certificate by pressing uninstall button\n9. Export the output to .csv file by pressing the export button\n10. Make sure to stop the network traffic monitoring process and uninstall the SSL Certificate before closing the app", "Help");
+        }
+
         private bool Comparetext(string value)
         {
             if (value == ClassUrl.startUrl)

@@ -42,6 +42,7 @@
             this.btnFolder = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -148,6 +149,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnFolder);
             this.panel2.Controls.Add(this.btnPrint);
             this.panel2.Controls.Add(this.btnShow);
@@ -160,6 +162,7 @@
             // 
             // btnFolder
             // 
+            this.btnFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFolder.Location = new System.Drawing.Point(12, 10);
             this.btnFolder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFolder.Name = "btnFolder";
@@ -171,6 +174,7 @@
             // 
             // btnPrint
             // 
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.Location = new System.Drawing.Point(12, 78);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(132, 29);
@@ -181,6 +185,7 @@
             // 
             // btnShow
             // 
+            this.btnShow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnShow.Location = new System.Drawing.Point(12, 43);
             this.btnShow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShow.Name = "btnShow";
@@ -189,6 +194,17 @@
             this.btnShow.Text = "Show";
             this.btnShow.UseVisualStyleBackColor = true;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(12, 113);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(132, 29);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Help";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // UserGroup8
             // 
@@ -220,5 +236,6 @@
         private System.Windows.Forms.Button btnFolder;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.Button btnShow;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -246,6 +246,11 @@ namespace CollectionOfTestingApp
 
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Click \"Start\" button to monitor the energy usage\n2. Click \"Pause\" button to pause the process of energy usage monitoring\n3. Click \"Record\" button to record the currend time and battery\n4. Click \"Download Record\" button to generate the csv file", "Help");
+        }
     }
 
 }

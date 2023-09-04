@@ -320,5 +320,10 @@ namespace CollectionOfTestingApp
                 MessageBox.Show("Select the folder of project which you want to test first!");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1. Click \"Choose Folder\" button and choose your project folder that you want to measure the modularity\n2. Click \"Show\" button to see the results in table form\n3. Click \"Generate to CSV\" button if you want to generate the result in CSV form", "Help");
+        }
     }
 }

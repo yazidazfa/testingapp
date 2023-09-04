@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.write_data = new System.Windows.Forms.Button();
             this.numericUpDownUrl = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.textBoxResults = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUrl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThreadsInc)).BeginInit();
@@ -70,6 +72,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.write_data);
             this.groupBox1.Controls.Add(this.numericUpDownUrl);
             this.groupBox1.Controls.Add(this.label6);
@@ -99,8 +102,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Params";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox1.Location = new System.Drawing.Point(275, 979);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // write_data
             // 
+            this.write_data.Cursor = System.Windows.Forms.Cursors.Hand;
             this.write_data.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.write_data.Location = new System.Drawing.Point(255, 288);
             this.write_data.Margin = new System.Windows.Forms.Padding(4);
@@ -191,6 +207,7 @@
             // 
             // buttonClear
             // 
+            this.buttonClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonClear.Location = new System.Drawing.Point(20, 288);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
@@ -253,6 +270,7 @@
             // 
             // buttonStop
             // 
+            this.buttonStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStop.Location = new System.Drawing.Point(177, 288);
             this.buttonStop.Margin = new System.Windows.Forms.Padding(4);
@@ -265,6 +283,7 @@
             // 
             // buttonStart
             // 
+            this.buttonStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStart.Location = new System.Drawing.Point(99, 288);
             this.buttonStart.Margin = new System.Windows.Forms.Padding(4);
@@ -400,6 +419,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownUrl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTimeout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThreadsInc)).EndInit();
@@ -433,5 +453,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownIterates;
         private System.Windows.Forms.TextBox textBoxUrl;
         private System.Windows.Forms.TextBox textBoxResults;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

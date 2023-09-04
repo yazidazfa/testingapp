@@ -45,13 +45,14 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.userControl12 = new WpfControlLibrary1.UserControl1();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.userGroup41 = new CollectionOfTestingApp.UserGroup4();
             this.userControl11 = new CollectionOfTestingApp.UserControl1();
             this.userGroup11 = new CollectionOfTestingApp.UserGroup1();
             this.userGroup31 = new CollectionOfTestingApp.UserGroup3();
             this.userGroup71 = new CollectionOfTestingApp.UserGroup7();
             this.userGroup21 = new CollectionOfTestingApp.UserGroup2();
             this.userGroup81 = new CollectionOfTestingApp.UserGroup8();
-            this.userGroup41 = new CollectionOfTestingApp.UserGroup4();
             this.userGroup91 = new CollectionOfTestingApp.UserGroup5();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -59,6 +60,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -250,6 +252,23 @@
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.userControl12;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox2.Location = new System.Drawing.Point(1498, 979);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
+            // userGroup41
+            // 
+            this.userGroup41.Location = new System.Drawing.Point(340, 0);
+            this.userGroup41.Name = "userGroup41";
+            this.userGroup41.Size = new System.Drawing.Size(1577, 1051);
+            this.userGroup41.TabIndex = 11;
+            // 
             // userControl11
             // 
             this.userControl11.Location = new System.Drawing.Point(340, 0);
@@ -292,13 +311,6 @@
             this.userGroup81.Size = new System.Drawing.Size(1777, 1051);
             this.userGroup81.TabIndex = 9;
             // 
-            // userGroup41
-            // 
-            this.userGroup41.Location = new System.Drawing.Point(340, 0);
-            this.userGroup41.Name = "userGroup41";
-            this.userGroup41.Size = new System.Drawing.Size(1577, 1051);
-            this.userGroup41.TabIndex = 11;
-            // 
             // userGroup91
             // 
             this.userGroup91.Location = new System.Drawing.Point(340, 0);
@@ -311,14 +323,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1536, 841);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.userControl11);
             this.Controls.Add(this.userGroup11);
             this.Controls.Add(this.userGroup31);
             this.Controls.Add(this.userGroup71);
-            this.Controls.Add(this.userGroup91);
             this.Controls.Add(this.userGroup21);
             this.Controls.Add(this.userGroup81);
+            this.Controls.Add(this.userGroup91);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.userGroup41);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -334,6 +347,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,6 +379,7 @@
         private WpfControlLibrary1.UserControl1 userControl12;
         private UserGroup4 userGroup41;
         private UserGroup5 userGroup91;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
