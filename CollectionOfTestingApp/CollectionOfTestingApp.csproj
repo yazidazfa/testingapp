@@ -343,8 +343,8 @@
     <None Include="Resources\Uin.bmp" />
     <None Include="Resources\UIN Sunan Kalijaga Logo %28PNG1080p%29 - Vector69Com.png" />
     <None Include="Resources\UIN Sunan Kalijaga Logo %28PNG1080p%29 - Vector69Com1.png" />
-    <Content Include="BasicFormatsForCore.dll" />
     <None Include="Resources\help_FILL0_wght400_GRAD0_opsz48.png" />
+    <Content Include="BasicFormatsForCore.dll" />
     <Content Include="SampleGraph.xml" />
     <Content Include="XMLDiagram.xml" />
   </ItemGroup>
