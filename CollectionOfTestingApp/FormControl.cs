@@ -90,6 +90,16 @@ namespace CollectionOfTestingApp
             userGroup91.Visible = false;
             userGroup81.Visible = false;
             userGroup41.Visible = false;
+            loadTesting.Visible = false;
+            instrumentation.Visible = false;
+            selfDocumentation.Visible = false;
+            conciseness.Visible = false;
+            dataCommonality.Visible = false;
+            halsteadCalculator.Visible = false;
+            performanceExecution.Visible = false;
+
+            
+            
             //userGroup61.Visible = false;
             //userGroup21.Visible = false;
             //userControl12.Visible
@@ -102,6 +112,51 @@ namespace CollectionOfTestingApp
         private void button8_Click(object sender, EventArgs e)
         {
             userControl(userGroup81);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            userControl(loadTesting);
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+           userControl(instrumentation);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            userControl(selfDocumentation);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            userControl(performanceExecution);
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            userControl(conciseness);
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            userControl(dataCommonality);
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            userControl(halsteadCalculator);
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            userControl(cyclomaticComplexity);
         }
     }
 }

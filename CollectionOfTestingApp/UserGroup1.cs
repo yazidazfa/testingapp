@@ -15,6 +15,8 @@ using Timer = System.Timers.Timer;
 using System.IO;
 using CollectionOfTestingApp;
 using CollectionOfTestingApp.model;
+using System.Diagnostics;
+
 
 namespace CollectionOfTestingApp
 {
@@ -120,6 +122,10 @@ namespace CollectionOfTestingApp
                         .AllowRemoteClients()
                         .Build();
 
+                // Register event handlers for WebSocket interception and other events
+                FiddlerApplication.BeforeRequest += FiddlerApplication_BeforeRequest;
+                FiddlerApplication.BeforeResponse += FiddlerApplication_BeforeResponse;
+
                 FiddlerApplication.AfterSessionComplete += FiddlerApplication_AfterSessionComplete;
                 FiddlerApplication.Startup(startupSettings);
             }
@@ -129,30 +135,135 @@ namespace CollectionOfTestingApp
             }
         }
 
+        private string lastDisplayedLink = string.Empty;
+
+        private void UpdateTBTextNotFiltered(string thing)
+        {
+            if (tb_listurlnotfiltered.InvokeRequired)
+            {
+                tb_listurlnotfiltered.Invoke(new MethodInvoker(() => UpdateTBTextNotFiltered(thing)));
+            }
+            else
+            {
+                if (thing != lastDisplayedLink)
+                {
+                    tb_listurlnotfiltered.Text += $"{thing}\r\n";
+                    lastDisplayedLink = thing;
+                }
+            }
+        }
+
+        private readonly object lockObject = new object();
+        private void UpdateTBText(string thing)
+        {
+            if (tb_listurl.InvokeRequired)
+            {
+                lock (lockObject)
+                {
+                    tb_listurl.Invoke(new MethodInvoker(() => UpdateTBText(thing)));
+                }
+            }
+            else
+            {
+                tb_listurl.Text += $"{thing}\r\n";
+            }
+        }
+        private void FiddlerApplication_BeforeRequest(Session oSession)
+        {
+            if (oSession.oRequest.headers.Exists("Upgrade") && oSession.oRequest.headers["Upgrade"].Contains("websocket") &&
+                oSession.oRequest.headers.Exists("Connection") && oSession.oRequest.headers["Connection"].Contains("Upgrade"))
+            {
+                // This is a WebSocket handshake request; you can inspect or modify it here
+                Console.WriteLine("WebSocket handshake request intercepted: " + oSession.fullUrl);
+            }
+        }
+        private void FiddlerApplication_BeforeResponse(Session oSession)
+        {
+            // Check if this is a WebSocket handshake response
+            if (oSession.oResponse.headers.Exists("Upgrade") && oSession.oResponse.headers["Upgrade"].Contains("websocket") &&
+                oSession.oResponse.headers.Exists("Connection") && oSession.oResponse.headers["Connection"].Contains("Upgrade"))
+            {
+                // This is a WebSocket handshake response; you can inspect or modify it here
+                Console.WriteLine("WebSocket handshake response intercepted: " + oSession.fullUrl);
+            }
+        }
+
+        //1
         private void FiddlerApplication_AfterSessionComplete(Session oSession)
         {
             if (oSession.RequestMethod == "CONNECT")
             {
                 return;
             }
-            if (oSession.RequestMethod == null || oSession.oRequest == null || oSession.oRequest.headers == null)
+            
+            // Include all URLs without checking if it's the main document
+            if (NoFilter(oSession))
             {
-                return;
+                ProcessSession(oSession, UpdateTBTextNotFiltered);
             }
 
-            string Headers = oSession.oRequest.headers.ToString();
-            Firstline = oSession.fullUrl;
-            int at = Headers.IndexOf("\r\n");
-
-            if (at < 0)
+            // Check if the session is relevant, is a web browser request, and is the main document
+            if (IsRelevantSession(oSession) && IsWebBrowserRequest(oSession) && IsMainDocument(oSession))
             {
-                return;
-            }
+                // Continue with processing the session
+                ProcessSession(oSession, UpdateTBText);
 
-            string Output = Firstline;
-            Console.WriteLine(Output);
-            Comparetext(Firstline);
-            Comparestop(Firstline);
+                // Call Comparetext and Comparestop only for relevant, web browser requests, and main documents
+                string headers = oSession.oRequest.headers.ToString();
+                string firstLine = oSession.fullUrl;
+                int at = headers.IndexOf("\r\n");
+
+                if (at >= 0)
+                {
+                    string output = firstLine;
+
+                    Console.WriteLine(output);
+                    Comparetext(firstLine);
+                    Comparestop(firstLine);
+                }
+            }
+        }
+
+        private Dictionary<Session, bool> userInitiatedSessions = new Dictionary<Session, bool>();
+        private List<string> userInitiatedUrls = new List<string>();
+
+        //private List<Session> userInitiatedSessions = new List<Session>();
+        private void ProcessSession(Session oSession, Action<string> updateTextBoxAction)
+        {
+            string fullUrl = oSession.fullUrl;
+
+            // Update the text box with the URL
+            updateTextBoxAction(fullUrl);
+        }
+        //1
+        private bool IsRelevantSession(Session oSession)
+        {
+            string sessionUrl = oSession.fullUrl.ToLower();
+            return (sessionUrl.Contains(ClassUrl.startUrl.ToLower()) || sessionUrl.Contains(ClassUrl.stopUrl.ToLower()));
+        }
+
+        private bool IsWebBrowserRequest(Session oSession)
+        {
+            // Example: Check if the User-Agent header contains "Mozilla" (assuming it's a common browser)
+            string userAgent = oSession.oRequest["User-Agent"];
+            return !string.IsNullOrEmpty(userAgent) && userAgent.Contains("Mozilla");
+        }
+
+        private bool IsMainDocument(Session oSession)
+        {
+            // Check if the content type indicates an HTML page
+            string contentType = oSession.oResponse["Content-Type"];
+
+            // Check if the URL ends with ".css" (or add more conditions based on your needs)
+            string url = oSession.fullUrl.ToLower();
+
+            return !string.IsNullOrEmpty(contentType) && contentType.ToLower().Contains("text/html") && !url.EndsWith(".css") && !url.EndsWith(".png");
+        }
+
+        private bool NoFilter(Session oSession)
+        {
+            string sessionUrl = oSession.fullUrl.ToLower();
+            return (sessionUrl.Contains(ClassUrl.startUrl.ToLower()) || sessionUrl.Contains(ClassUrl.stopUrl.ToLower()));
         }
 
         private void Stops()
@@ -182,6 +293,9 @@ namespace CollectionOfTestingApp
             ClassUrl.stopUrl = "";
             ClassUrl.startTime = "";
             ClassUrl.stopTime = "";
+
+            tb_listurl.Text = string.Empty;
+            tb_listurlnotfiltered.Text = string.Empty;
         }
 
         private void FormStopwatch_FormClosed(object sender, FormClosedEventArgs e)
@@ -200,7 +314,11 @@ namespace CollectionOfTestingApp
                 {
                     var stopwatchData = new List<string>();
                     stopwatchData.Add("Start URL,Stop URL,Start Time,Stop Time,Stopwatch");
-                    stopwatchData.Add($"{ClassUrl.startUrl},{ClassUrl.stopUrl},{ClassUrl.startTime},{ClassUrl.stopTime},{lblStopwatch.Text}");
+                    stopwatchData.Add($"{ClassUrl.startUrl},{ClassUrl.stopUrl},{ClassUrl.startTime},{ClassUrl.stopTime},{lblStopwatch.Text} (ms)");
+                    stopwatchData.Add("List URL (filtered)");
+                    stopwatchData.Add($"{tb_listurl.Text}");
+                    stopwatchData.Add("List URL (not filtered)");
+                    stopwatchData.Add($"{tb_listurlnotfiltered.Text}");
 
 
 
@@ -222,7 +340,12 @@ namespace CollectionOfTestingApp
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("1. Write the full url of start and stop point of your task\n2. Click submit button to save your the url\n3. Install the SSL certificate by pressing the install button\n4. Click start button to start the network traffic monitoring proccess\n5. Open the start url and the stopwatch will start\n6. Open the stop url and the stopwatch will stop\n7. Click stop button to stop the network traffic monitoring proccess\n8. Uninstall the SSL certificate by pressing uninstall button\n9. Export the output to .csv file by pressing the export button\n10. Make sure to stop the network traffic monitoring process and uninstall the SSL Certificate before closing the app", "Help");
+            MessageBox.Show("1. Write the full url of start and stop point of your task\n2. Click submit button to save your url\n3. Install the SSL certificate by pressing the install button\n4. Click start button to start the network traffic monitoring proccess\n5. Open the start url and the stopwatch will start\n6. Open the stop url and the stopwatch will stop\n7. Click stop button to stop the network traffic monitoring proccess\n8. Uninstall the SSL certificate by pressing remove button\n9. Export the output to .csv file by pressing the export button\n10. Make sure to stop the network traffic monitoring process and uninstall the SSL Certificate before closing the app", "Help");
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private bool Comparetext(string value)

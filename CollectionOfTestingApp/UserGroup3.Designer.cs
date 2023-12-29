@@ -47,6 +47,7 @@
             this.diagramView1 = new MindFusion.Diagramming.WinForms.DiagramView();
             this.diagram = new MindFusion.Diagramming.Diagram();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnExportDiagram = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.diagram1 = new MindFusion.Diagramming.Diagram();
             this.diagram2 = new MindFusion.Diagramming.Diagram();
             this.ClassesData = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             tabControl = new System.Windows.Forms.TabControl();
             tabControl.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -81,21 +81,21 @@
             tabControl.Controls.Add(this.tabPage1);
             tabControl.Controls.Add(this.tabPage2);
             tabControl.Controls.Add(this.tabPage3);
-            tabControl.Location = new System.Drawing.Point(0, 245);
-            tabControl.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            tabControl.Location = new System.Drawing.Point(0, 199);
+            tabControl.Margin = new System.Windows.Forms.Padding(2);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new System.Drawing.Size(1571, 806);
+            tabControl.Size = new System.Drawing.Size(1178, 655);
             tabControl.TabIndex = 9;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgv_sourceCode);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1563, 777);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(1170, 629);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Source";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -117,13 +117,13 @@
             this.methodId,
             this.methodTarget,
             this.methodParameter});
-            this.dgv_sourceCode.Location = new System.Drawing.Point(3, 2);
-            this.dgv_sourceCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_sourceCode.Location = new System.Drawing.Point(2, 2);
+            this.dgv_sourceCode.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_sourceCode.Name = "dgv_sourceCode";
             this.dgv_sourceCode.ReadOnly = true;
             this.dgv_sourceCode.RowHeadersWidth = 51;
             this.dgv_sourceCode.RowTemplate.Height = 24;
-            this.dgv_sourceCode.Size = new System.Drawing.Size(1557, 773);
+            this.dgv_sourceCode.Size = new System.Drawing.Size(1168, 628);
             this.dgv_sourceCode.TabIndex = 5;
             // 
             // className
@@ -206,11 +206,10 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.txtBox_sourceCode);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1563, 777);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1170, 629);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "SourceCode";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -218,21 +217,21 @@
             // txtBox_sourceCode
             // 
             this.txtBox_sourceCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtBox_sourceCode.Location = new System.Drawing.Point(4, 4);
-            this.txtBox_sourceCode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_sourceCode.Location = new System.Drawing.Point(3, 3);
+            this.txtBox_sourceCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtBox_sourceCode.Name = "txtBox_sourceCode";
-            this.txtBox_sourceCode.Size = new System.Drawing.Size(1555, 769);
+            this.txtBox_sourceCode.Size = new System.Drawing.Size(1164, 623);
             this.txtBox_sourceCode.TabIndex = 2;
             this.txtBox_sourceCode.Text = "";
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.diagramView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1563, 777);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(1170, 629);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Visualize";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -242,10 +241,9 @@
             this.diagramView1.Diagram = this.diagram;
             this.diagramView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.diagramView1.LicenseKey = null;
-            this.diagramView1.Location = new System.Drawing.Point(3, 2);
-            this.diagramView1.Margin = new System.Windows.Forms.Padding(4);
+            this.diagramView1.Location = new System.Drawing.Point(2, 2);
             this.diagramView1.Name = "diagramView1";
-            this.diagramView1.Size = new System.Drawing.Size(1557, 773);
+            this.diagramView1.Size = new System.Drawing.Size(1166, 625);
             this.diagramView1.TabIndex = 0;
             this.diagramView1.Text = "diagramView1";
             // 
@@ -261,21 +259,32 @@
             this.panel1.Controls.Add(this.lbl_Title);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(tabControl);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1777, 1051);
+            this.panel1.Size = new System.Drawing.Size(1333, 854);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Location = new System.Drawing.Point(1075, 180);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 31);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Help";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnExportDiagram);
             this.groupBox3.Controls.Add(this.btnVisualize);
-            this.groupBox3.Location = new System.Drawing.Point(768, 4);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(576, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(411, 68);
+            this.groupBox3.Size = new System.Drawing.Size(308, 55);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Visualize";
@@ -283,10 +292,9 @@
             // btnClear
             // 
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.Location = new System.Drawing.Point(267, 23);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(200, 19);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(131, 38);
+            this.btnClear.Size = new System.Drawing.Size(98, 31);
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
@@ -295,10 +303,10 @@
             // btnExportDiagram
             // 
             this.btnExportDiagram.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportDiagram.Location = new System.Drawing.Point(117, 23);
-            this.btnExportDiagram.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExportDiagram.Location = new System.Drawing.Point(88, 19);
+            this.btnExportDiagram.Margin = new System.Windows.Forms.Padding(2);
             this.btnExportDiagram.Name = "btnExportDiagram";
-            this.btnExportDiagram.Size = new System.Drawing.Size(143, 38);
+            this.btnExportDiagram.Size = new System.Drawing.Size(107, 31);
             this.btnExportDiagram.TabIndex = 5;
             this.btnExportDiagram.Text = "Export as PNG";
             this.btnExportDiagram.UseVisualStyleBackColor = true;
@@ -307,10 +315,10 @@
             // btnVisualize
             // 
             this.btnVisualize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVisualize.Location = new System.Drawing.Point(7, 23);
-            this.btnVisualize.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVisualize.Location = new System.Drawing.Point(5, 19);
+            this.btnVisualize.Margin = new System.Windows.Forms.Padding(2);
             this.btnVisualize.Name = "btnVisualize";
-            this.btnVisualize.Size = new System.Drawing.Size(105, 38);
+            this.btnVisualize.Size = new System.Drawing.Size(79, 31);
             this.btnVisualize.TabIndex = 1;
             this.btnVisualize.Text = "Visualize";
             this.btnVisualize.UseVisualStyleBackColor = true;
@@ -320,11 +328,9 @@
             // 
             this.groupBox1.Controls.Add(this.rb_csharp);
             this.groupBox1.Controls.Add(this.rb_java);
-            this.groupBox1.Location = new System.Drawing.Point(1212, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(909, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(352, 68);
+            this.groupBox1.Size = new System.Drawing.Size(264, 55);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Programming Languages";
@@ -332,10 +338,9 @@
             // rb_csharp
             // 
             this.rb_csharp.AutoSize = true;
-            this.rb_csharp.Location = new System.Drawing.Point(111, 30);
-            this.rb_csharp.Margin = new System.Windows.Forms.Padding(4);
+            this.rb_csharp.Location = new System.Drawing.Point(83, 24);
             this.rb_csharp.Name = "rb_csharp";
-            this.rb_csharp.Size = new System.Drawing.Size(44, 20);
+            this.rb_csharp.Size = new System.Drawing.Size(39, 17);
             this.rb_csharp.TabIndex = 1;
             this.rb_csharp.Text = "C#";
             this.rb_csharp.UseVisualStyleBackColor = true;
@@ -344,10 +349,9 @@
             // 
             this.rb_java.AutoSize = true;
             this.rb_java.Checked = true;
-            this.rb_java.Location = new System.Drawing.Point(19, 30);
-            this.rb_java.Margin = new System.Windows.Forms.Padding(4);
+            this.rb_java.Location = new System.Drawing.Point(14, 24);
             this.rb_java.Name = "rb_java";
-            this.rb_java.Size = new System.Drawing.Size(58, 20);
+            this.rb_java.Size = new System.Drawing.Size(48, 17);
             this.rb_java.TabIndex = 0;
             this.rb_java.TabStop = true;
             this.rb_java.Text = "Java";
@@ -357,9 +361,10 @@
             // 
             this.lbl_Title.AutoSize = true;
             this.lbl_Title.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Title.Location = new System.Drawing.Point(12, 4);
+            this.lbl_Title.Location = new System.Drawing.Point(9, 3);
+            this.lbl_Title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(193, 25);
+            this.lbl_Title.Size = new System.Drawing.Size(158, 20);
             this.lbl_Title.TabIndex = 8;
             this.lbl_Title.Text = "Code Visualization";
             // 
@@ -368,11 +373,9 @@
             this.groupBox2.Controls.Add(this.btnReset);
             this.groupBox2.Controls.Add(this.btnBrowse);
             this.groupBox2.Controls.Add(this.btnExport);
-            this.groupBox2.Location = new System.Drawing.Point(352, 4);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(264, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(392, 68);
+            this.groupBox2.Size = new System.Drawing.Size(294, 55);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Source Code";
@@ -380,10 +383,9 @@
             // btnReset
             // 
             this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Location = new System.Drawing.Point(248, 23);
-            this.btnReset.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReset.Location = new System.Drawing.Point(186, 19);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(131, 38);
+            this.btnReset.Size = new System.Drawing.Size(98, 31);
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -392,10 +394,10 @@
             // btnBrowse
             // 
             this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBrowse.Location = new System.Drawing.Point(7, 23);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBrowse.Location = new System.Drawing.Point(5, 19);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(105, 38);
+            this.btnBrowse.Size = new System.Drawing.Size(79, 31);
             this.btnBrowse.TabIndex = 0;
             this.btnBrowse.Text = "Browse File";
             this.btnBrowse.UseVisualStyleBackColor = true;
@@ -404,10 +406,10 @@
             // btnExport
             // 
             this.btnExport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExport.Location = new System.Drawing.Point(117, 23);
-            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExport.Location = new System.Drawing.Point(88, 19);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(2);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(124, 38);
+            this.btnExport.Size = new System.Drawing.Size(93, 31);
             this.btnExport.TabIndex = 4;
             this.btnExport.Text = "Export as csv";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -421,24 +423,15 @@
             // 
             this.diagram2.TouchThreshold = 0F;
             // 
-            // button1
-            // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(1433, 222);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 38);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Help";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // UserGroup3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
+            this.Location = new System.Drawing.Point(255, 0);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserGroup3";
-            this.Size = new System.Drawing.Size(1777, 1051);
+            this.Size = new System.Drawing.Size(1333, 854);
             tabControl.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sourceCode)).EndInit();
