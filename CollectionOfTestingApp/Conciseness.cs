@@ -46,9 +46,15 @@ namespace CollectionOfTestingApp
 
                 if (totalLines > 0)
                 {
-                    double conciseness1 = (double)totalLines / totalFeatures;
-                    double conciseness2 = (double)totalLOC / totalFeatures;
-                    label2.Text = $"Total Number of Function : {totalFeatures}\nTotal Number Line of Code : {totalLOC}\nTotal Number of Executable Line of Code : {totalLines}\n\nConciseness (#Line of Code / Function) = {conciseness1:F2}\nConciseness  (#Executable Line of Code / Function) = {conciseness2:F2}";
+                    double conciseness1 = (double)totalLOC / totalFeatures;
+                    double conciseness2 = (double)totalLines / totalFeatures;
+                    label2.Text =
+                        $"File Name : {Path.GetFileName(selectedFilePath)}\n" +
+                        $"Total Number of Function : {totalFeatures}\n" +
+                        $"Total Number Line of Code : {totalLOC}\n" +
+                        $"Total Number of Executable Line of Code : {totalLines}\n" +
+                        $"\nConciseness (#Line of Code / Function) = {conciseness1:F2}" +
+                        $"\nConciseness  (#Executable Line of Code / Function) = {conciseness2:F2}";
 
                     string methodNames = ExtractMethodNames(lines);
                     label3.Text = $"{methodNames}";
@@ -195,17 +201,21 @@ namespace CollectionOfTestingApp
 
                 if (totalLines > 0)
                 {
-                    double conciseness1 = (double)totalLines / totalFeatures;
-                    double conciseness2 = (double)totalLOC / totalFeatures;
+                    double conciseness1 = (double)totalLOC / totalFeatures;
+                    double conciseness2 = (double)totalLines / totalFeatures;
 
                     StringBuilder csvContent = new StringBuilder();
-                    csvContent.AppendLine("Name;Output;");
-                    csvContent.AppendLine($"Total Number of Function :;{totalFeatures};");
-                    csvContent.AppendLine($"Total Number Line of Code :;{totalLines};");
-                    csvContent.AppendLine($"Total Number of Executable Line of Code :;{totalLOC};");
-                    csvContent.AppendLine($"Conciseness (#Line of Code / Function) :;{conciseness1:F2};");
-                    csvContent.AppendLine($"Conciseness (#Executable Line of Code / Function) :;{conciseness2:F2};");
+                    csvContent.AppendLine($"Conciseness;");
                     csvContent.AppendLine(";;");
+                    csvContent.AppendLine($"File Name : ; {Path.GetFileName(selectedFilePath)};");
+                    csvContent.AppendLine(";;");
+                    csvContent.AppendLine("Name;Output;");
+                    csvContent.AppendLine($"Total Number of Function : ;{totalFeatures};");
+                    csvContent.AppendLine($"Total Number of Line of Code : ;{totalLOC};");
+                    csvContent.AppendLine($"Total Number of Executable Line of Code : ;{totalLines};");
+                    csvContent.AppendLine($"Conciseness (#Line of Code / Function) : ;{conciseness1:F2};");
+                    csvContent.AppendLine($"Conciseness (#Executable Line of Code / Function) : ;{conciseness2:F2};");
+                    csvContent.AppendLine();
                     csvContent.AppendLine("Function Name;");
 
                     string methodNames = ExtractMethodNames(lines);
@@ -265,14 +275,21 @@ namespace CollectionOfTestingApp
             MessageBox.Show(message, "How to Use the Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void onlineNotesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void docNotesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to open the Online Notes?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                System.Diagnostics.Process.Start("https://github.com/seoeka/uas-pkpl-conciseness/blob/master/README.md");
-            }
+            StringBuilder explanation = new StringBuilder();
+            explanation.AppendLine("Introduction to Conciseness in Software Quality Factors:");
+            explanation.AppendLine();
+            explanation.AppendLine("Conciseness is a vital feature derived from the Software Quality Factors, playing a crucial role in assessing and enhancing the overall quality of software systems. This feature is based on McCall's Factor Models, specifically focusing on the Conciseness factor. According to McCall, Conciseness is a measure of the program's compactness, particularly in terms of the number of Lines of Code (LOC). It is specifically designed for programs written in the C# language, evaluating their efficiency and clarity.");
+            explanation.AppendLine();
+            explanation.AppendLine("The Conciseness feature employs two key metrics to evaluate and quantify the quality of a C# program:");
+            explanation.AppendLine();
+            explanation.AppendLine("1. Conciseness (LoC / Total Features):");
+            explanation.AppendLine("   Conciseness, in this context, is calculated by dividing the total number of Lines of Code (LoC) by the total number of features, where features refer to methods, functions, or procedures within the program. This metric provides insights into the overall compactness of the codebase, emphasizing the importance of minimizing unnecessary code to enhance readability and maintainability.");
+            explanation.AppendLine();
+            explanation.AppendLine("2. Conciseness (Executable LoC / Total Features):");
+            explanation.AppendLine("   Another facet of Conciseness is measured by considering only the Executable Lines of Code (Executable LoC) in the calculation. Similar to the first metric, this approach offers a more focused evaluation by excluding non-executable lines, such as comments. It provides a nuanced perspective on the efficiency of the program, emphasizing the importance of concise and purposeful code execution.");
+            MessageBox.Show(explanation.ToString(), "Conciseness Explanation", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

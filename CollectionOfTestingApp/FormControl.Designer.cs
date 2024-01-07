@@ -463,6 +463,8 @@
             // 
             // userControl11
             // 
+            this.userControl11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.userControl11.Location = new System.Drawing.Point(255, 0);
             this.userControl11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.userControl11.Name = "userControl11";
@@ -581,6 +583,14 @@
             this.halsteadCalculator.Name = "halsteadCalculator";
             this.halsteadCalculator.Size = new System.Drawing.Size(1183, 854);
             this.halsteadCalculator.TabIndex = 19;
+            // 
+            // cyclomaticComplexity
+            // 
+            this.cyclomaticComplexity.Location = new System.Drawing.Point(255, 0);
+            this.cyclomaticComplexity.Margin = new System.Windows.Forms.Padding(2);
+            this.cyclomaticComplexity.Name = "cyclomaticComplexity";
+            this.cyclomaticComplexity.Size = new System.Drawing.Size(1183, 854);
+            this.cyclomaticComplexity.TabIndex = 20;
             // 
             // pictureBox2
             // 
