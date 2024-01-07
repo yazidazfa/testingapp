@@ -30,6 +30,7 @@ namespace CollectionOfTestingApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Conciseness));
             this.bt_export = new System.Windows.Forms.Button();
             this.bt_help = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,16 +43,16 @@ namespace CollectionOfTestingApp
             this.label1 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.howTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.onlineNotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.docToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bt_export
             // 
-            this.bt_export.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_export.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bt_export.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_export.Location = new System.Drawing.Point(714, 611);
+            this.bt_export.Location = new System.Drawing.Point(705, 593);
             this.bt_export.Name = "bt_export";
             this.bt_export.Size = new System.Drawing.Size(153, 36);
             this.bt_export.TabIndex = 12;
@@ -61,9 +62,9 @@ namespace CollectionOfTestingApp
             // 
             // bt_help
             // 
-            this.bt_help.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.bt_help.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.bt_help.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_help.Location = new System.Drawing.Point(914, 611);
+            this.bt_help.Location = new System.Drawing.Point(905, 593);
             this.bt_help.Name = "bt_help";
             this.bt_help.Size = new System.Drawing.Size(153, 36);
             this.bt_help.TabIndex = 13;
@@ -73,10 +74,10 @@ namespace CollectionOfTestingApp
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(773, 147);
+            this.label4.Location = new System.Drawing.Point(764, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(239, 35);
             this.label4.TabIndex = 17;
@@ -84,11 +85,11 @@ namespace CollectionOfTestingApp
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel1.AutoScroll = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(714, 216);
+            this.panel1.Location = new System.Drawing.Point(705, 198);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(353, 371);
             this.panel1.TabIndex = 16;
@@ -107,22 +108,20 @@ namespace CollectionOfTestingApp
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(132, 336);
+            this.label2.Location = new System.Drawing.Point(123, 318);
             this.label2.MaximumSize = new System.Drawing.Size(1000, 1000);
             this.label2.MinimumSize = new System.Drawing.Size(355, 250);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(2);
             this.label2.Size = new System.Drawing.Size(541, 373);
             this.label2.TabIndex = 15;
-            this.label2.Text = "Total Number of Function :\nTotal Number of Line of Code :\nTotal Number of Executa" +
-    "ble Line of Code :\n\nConciseness (#Line of Code / Function) =\nConciseness  (#Exec" +
-    "utable Line of Code / Function) =\n";
+            this.label2.Text = resources.GetString("label2.Text");
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(132, 216);
+            this.textBox1.Location = new System.Drawing.Point(123, 198);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(346, 36);
             this.textBox1.TabIndex = 14;
@@ -131,7 +130,7 @@ namespace CollectionOfTestingApp
             // 
             this.bt_calculate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bt_calculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_calculate.Location = new System.Drawing.Point(132, 269);
+            this.bt_calculate.Location = new System.Drawing.Point(123, 251);
             this.bt_calculate.Name = "bt_calculate";
             this.bt_calculate.Size = new System.Drawing.Size(541, 40);
             this.bt_calculate.TabIndex = 11;
@@ -143,7 +142,7 @@ namespace CollectionOfTestingApp
             // 
             this.bt_upload.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.bt_upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_upload.Location = new System.Drawing.Point(520, 216);
+            this.bt_upload.Location = new System.Drawing.Point(511, 198);
             this.bt_upload.Name = "bt_upload";
             this.bt_upload.Size = new System.Drawing.Size(153, 36);
             this.bt_upload.TabIndex = 10;
@@ -156,7 +155,7 @@ namespace CollectionOfTestingApp
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(278, 141);
+            this.label1.Location = new System.Drawing.Point(269, 123);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 46);
             this.label1.TabIndex = 9;
@@ -167,7 +166,7 @@ namespace CollectionOfTestingApp
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.howTToolStripMenuItem,
-            this.onlineNotesToolStripMenuItem});
+            this.docToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(161, 48);
             // 
@@ -178,17 +177,18 @@ namespace CollectionOfTestingApp
             this.howTToolStripMenuItem.Text = "How to Use Tool";
             this.howTToolStripMenuItem.Click += new System.EventHandler(this.howTToolStripMenuItem_Click);
             // 
-            // onlineNotesToolStripMenuItem
+            // docToolStripMenuItem
             // 
-            this.onlineNotesToolStripMenuItem.Name = "onlineNotesToolStripMenuItem";
-            this.onlineNotesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.onlineNotesToolStripMenuItem.Text = "Online Notes";
-            this.onlineNotesToolStripMenuItem.Click += new System.EventHandler(this.onlineNotesToolStripMenuItem_Click);
+            this.docToolStripMenuItem.Name = "docToolStripMenuItem";
+            this.docToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.docToolStripMenuItem.Text = "Documentation";
+            this.docToolStripMenuItem.Click += new System.EventHandler(this.docNotesToolStripMenuItem_Click);
             // 
             // Conciseness
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.bt_export);
             this.Controls.Add(this.bt_help);
             this.Controls.Add(this.label4);
@@ -224,6 +224,6 @@ namespace CollectionOfTestingApp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem howTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem onlineNotesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem docToolStripMenuItem;
     }
 }
