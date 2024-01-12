@@ -261,7 +261,6 @@ namespace CollectionOfTestingApp
 
         private void bt_help_Click(object sender, EventArgs e)
         {
-            contextMenuStrip1.Show(bt_help, new Point(0, bt_help.Height));
         }
 
         private void howTToolStripMenuItem_Click(object sender, EventArgs e)
@@ -276,6 +275,34 @@ namespace CollectionOfTestingApp
         }
 
         private void docNotesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StringBuilder explanation = new StringBuilder();
+            explanation.AppendLine("Introduction to Conciseness in Software Quality Factors:");
+            explanation.AppendLine();
+            explanation.AppendLine("Conciseness is a vital feature derived from the Software Quality Factors, playing a crucial role in assessing and enhancing the overall quality of software systems. This feature is based on McCall's Factor Models, specifically focusing on the Conciseness factor. According to McCall, Conciseness is a measure of the program's compactness, particularly in terms of the number of Lines of Code (LOC). It is specifically designed for programs written in the C# language, evaluating their efficiency and clarity.");
+            explanation.AppendLine();
+            explanation.AppendLine("The Conciseness feature employs two key metrics to evaluate and quantify the quality of a C# program:");
+            explanation.AppendLine();
+            explanation.AppendLine("1. Conciseness (LoC / Total Features):");
+            explanation.AppendLine("   Conciseness, in this context, is calculated by dividing the total number of Lines of Code (LoC) by the total number of features, where features refer to methods, functions, or procedures within the program. This metric provides insights into the overall compactness of the codebase, emphasizing the importance of minimizing unnecessary code to enhance readability and maintainability.");
+            explanation.AppendLine();
+            explanation.AppendLine("2. Conciseness (Executable LoC / Total Features):");
+            explanation.AppendLine("   Another facet of Conciseness is measured by considering only the Executable Lines of Code (Executable LoC) in the calculation. Similar to the first metric, this approach offers a more focused evaluation by excluding non-executable lines, such as comments. It provides a nuanced perspective on the efficiency of the program, emphasizing the importance of concise and purposeful code execution.");
+            MessageBox.Show(explanation.ToString(), "Conciseness Explanation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string message = "How to Use the Application:\n\n";
+            message += "1. Upload your C# file\n";
+            message += "2. Click the 'Calculate Conciseness' button to calculate the Conciseness score\n";
+            message += "3. The result of the calculation will be displayed on the screen\n";
+            message += "4. If you want to export the result to a CSV file, please click the 'Export to CSV' button";
+
+            MessageBox.Show(message, "How to Use the Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             StringBuilder explanation = new StringBuilder();
             explanation.AppendLine("Introduction to Conciseness in Software Quality Factors:");

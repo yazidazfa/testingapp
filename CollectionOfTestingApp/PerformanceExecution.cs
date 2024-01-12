@@ -140,7 +140,7 @@ namespace CollectionOfTestingApp
             help.AppendLine("2. Choose the \"upload folder\" option to include a folder containing .cs files.");
             help.AppendLine("3. Click the \"Count\" button to initiate the code execution calculation.");
             help.AppendLine("4. The application will display the successfully executed time on the \"time (ms)\" bar.");
-            help.AppendLine("5. The recorded time is presented in milliseconds (ms).");
+            help.AppendLine("5. Press export.csv button to download the executed time");
             help.AppendLine("6. Upon successful completion, you can download the execution results by pressing the \"export\" button. The downloaded result will be in .txt format.\r\n\r\n\r\n\r\n\r\n\r\n");
 
             return help.ToString();
@@ -185,6 +185,16 @@ namespace CollectionOfTestingApp
             {
                 MessageBox.Show("No metrics to export", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ShowHelp();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            ShowInfo();
         }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.button17 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.button16 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -59,14 +61,15 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.userControl12 = new WpfControlLibrary1.UserControl1();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.userControl11 = new CollectionOfTestingApp.UserControl1();
-            this.userGroup11 = new CollectionOfTestingApp.UserGroup1();
             this.userGroup31 = new CollectionOfTestingApp.UserGroup3();
+            this.userGroup11 = new CollectionOfTestingApp.UserGroup1();
             this.userGroup71 = new CollectionOfTestingApp.UserGroup7();
             this.userGroup21 = new CollectionOfTestingApp.UserGroup2();
             this.userGroup81 = new CollectionOfTestingApp.UserGroup8();
-            this.userGroup41 = new CollectionOfTestingApp.UserGroup4();
             this.userGroup91 = new CollectionOfTestingApp.UserGroup5();
+            this.userGroup41 = new CollectionOfTestingApp.UserGroup4();
             this.loadTesting = new CollectionOfTestingApp.LoadTesting();
             this.instrumentation = new CollectionOfTestingApp.Instrumentation();
             this.selfDocumentation = new CollectionOfTestingApp.SelfDocumentation();
@@ -75,8 +78,9 @@
             this.dataCommonality = new CollectionOfTestingApp.DataCommonality();
             this.halsteadCalculator = new CollectionOfTestingApp.HalsteadCalculator();
             this.cyclomaticComplexity = new CollectionOfTestingApp.CyclomaticComplexity();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.errorTolerance = new CollectionOfTestingApp.ErrorTolerance();
             this.panel1.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -95,6 +99,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(240)))), ((int)(((byte)(206)))));
+            this.panel1.Controls.Add(this.groupBox11);
             this.panel1.Controls.Add(this.groupBox10);
             this.panel1.Controls.Add(this.groupBox9);
             this.panel1.Controls.Add(this.groupBox8);
@@ -112,6 +117,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 687);
             this.panel1.TabIndex = 0;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.button17);
+            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Location = new System.Drawing.Point(17, 1507);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(220, 91);
+            this.groupBox11.TabIndex = 14;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "???";
+            // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(21, 31);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(177, 34);
+            this.button17.TabIndex = 0;
+            this.button17.Text = "Error Tolerance";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // groupBox10
             // 
@@ -131,7 +158,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(177, 34);
             this.button16.TabIndex = 0;
-            this.button16.Text = "CyclomaticComplexity";
+            this.button16.Text = "Cyclomatic Complexity";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -153,7 +180,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(177, 34);
             this.button15.TabIndex = 0;
-            this.button15.Text = "HalsteadCalculator";
+            this.button15.Text = "Halstead Metric";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -276,7 +303,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(177, 34);
             this.button12.TabIndex = 6;
-            this.button12.Text = "Performance Execution Time";
+            this.button12.Text = "Execution Time";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -461,6 +488,17 @@
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.userControl12;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox2.Location = new System.Drawing.Point(1123, 796);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(37, 40);
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            // 
             // userControl11
             // 
             this.userControl11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -471,14 +509,6 @@
             this.userControl11.Size = new System.Drawing.Size(1333, 854);
             this.userControl11.TabIndex = 1;
             // 
-            // userGroup11
-            // 
-            this.userGroup11.Location = new System.Drawing.Point(255, 0);
-            this.userGroup11.Margin = new System.Windows.Forms.Padding(2);
-            this.userGroup11.Name = "userGroup11";
-            this.userGroup11.Size = new System.Drawing.Size(1333, 854);
-            this.userGroup11.TabIndex = 15;
-            // 
             // userGroup31
             // 
             this.userGroup31.Location = new System.Drawing.Point(255, 0);
@@ -486,6 +516,14 @@
             this.userGroup31.Name = "userGroup31";
             this.userGroup31.Size = new System.Drawing.Size(1333, 854);
             this.userGroup31.TabIndex = 14;
+            // 
+            // userGroup11
+            // 
+            this.userGroup11.Location = new System.Drawing.Point(255, 0);
+            this.userGroup11.Margin = new System.Windows.Forms.Padding(2);
+            this.userGroup11.Name = "userGroup11";
+            this.userGroup11.Size = new System.Drawing.Size(1333, 854);
+            this.userGroup11.TabIndex = 15;
             // 
             // userGroup71
             // 
@@ -511,14 +549,6 @@
             this.userGroup81.Size = new System.Drawing.Size(1333, 854);
             this.userGroup81.TabIndex = 9;
             // 
-            // userGroup41
-            // 
-            this.userGroup41.Location = new System.Drawing.Point(255, 0);
-            this.userGroup41.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.userGroup41.Name = "userGroup41";
-            this.userGroup41.Size = new System.Drawing.Size(1183, 854);
-            this.userGroup41.TabIndex = 11;
-            // 
             // userGroup91
             // 
             this.userGroup91.Location = new System.Drawing.Point(255, 0);
@@ -526,6 +556,14 @@
             this.userGroup91.Name = "userGroup91";
             this.userGroup91.Size = new System.Drawing.Size(1333, 854);
             this.userGroup91.TabIndex = 16;
+            // 
+            // userGroup41
+            // 
+            this.userGroup41.Location = new System.Drawing.Point(255, 0);
+            this.userGroup41.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.userGroup41.Name = "userGroup41";
+            this.userGroup41.Size = new System.Drawing.Size(1183, 854);
+            this.userGroup41.TabIndex = 11;
             // 
             // loadTesting
             // 
@@ -592,17 +630,6 @@
             this.cyclomaticComplexity.Size = new System.Drawing.Size(1183, 854);
             this.cyclomaticComplexity.TabIndex = 20;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
-            this.pictureBox2.Location = new System.Drawing.Point(1123, 796);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(37, 40);
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
             // FormControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -627,6 +654,7 @@
             this.Controls.Add(this.dataCommonality);
             this.Controls.Add(this.halsteadCalculator);
             this.Controls.Add(this.cyclomaticComplexity);
+            this.Controls.Add(this.errorTolerance);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
             this.MaximizeBox = false;
@@ -635,6 +663,7 @@
             this.Text = "Suka Apps Software Testing Tools";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
@@ -682,6 +711,7 @@
         private DataCommonality dataCommonality;
         private HalsteadCalculator halsteadCalculator;
         private CyclomaticComplexity cyclomaticComplexity;
+        private ErrorTolerance errorTolerance;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private WpfControlLibrary1.UserControl1 userControl12;
         private UserGroup4 userGroup41;
@@ -701,6 +731,8 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Button button17;
     }
 }
 

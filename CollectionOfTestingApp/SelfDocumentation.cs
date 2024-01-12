@@ -38,8 +38,8 @@ namespace CollectionOfTestingApp
             }
             else
             {
-                dataGridView1.Rows.Add(Path.GetFileName(filePath), "No Functions found in the file");
-                dataGridView2.Rows.Add(Path.GetFileName(filePath), "No Functions found in the file");
+                dataGridView1.Rows.Add(Path.GetFileName(filePath), "0");
+                dataGridView2.Rows.Add(Path.GetFileName(filePath), "0");
                 return (0, 0);
             }
         }
@@ -149,10 +149,6 @@ namespace CollectionOfTestingApp
             return count;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
         static bool CekComment(string line)
         {
             return Regex.IsMatch(line, @"^\s*//|^\s*/\*|^\s*\*/|^\s*\*"); // Anda dapat menyesuaikan pola sesuai dengan format komentar pada file C#
@@ -229,7 +225,7 @@ namespace CollectionOfTestingApp
                     {
                         saveFileDialog.Filter = "CSV Files (*.csv)|*.csv|All Files (*.*)|*.*";
                         saveFileDialog.FilterIndex = 1;
-
+     
                         if (saveFileDialog.ShowDialog() == DialogResult.OK)
                         {
                             string filePath = saveFileDialog.FileName;
@@ -238,6 +234,11 @@ namespace CollectionOfTestingApp
                             {
                                 // Menambahkan baris informasi pemisah kolom yang digunakan
                                 sw.WriteLine("sep=,");
+
+                                sw.WriteLine();
+                                sw.WriteLine("Self-Documentation Data Report");
+                                sw.WriteLine();
+                                sw.WriteLine();
 
                                 // Menulis header dataGridView1
                                 foreach (DataGridViewColumn column in dataGridView1.Columns)
@@ -257,6 +258,7 @@ namespace CollectionOfTestingApp
                                 }
 
                                 // Menambahkan baris kosong sebagai pemisah antara dataGridView1 dan dataGridView2
+                                sw.WriteLine();
                                 sw.WriteLine();
 
                                 // Menulis header dataGridView2
@@ -290,6 +292,37 @@ namespace CollectionOfTestingApp
             {
                 MessageBox.Show("No data to export.", "Export Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+
+        private void btnHelp_Click(object sender, EventArgs e)
+        {
+            listmenu.Show(btnHelp, 0, btnHelp.Height);
+        }
+
+        private void userguide_Click(object sender, EventArgs e)
+        {
+            string helpMessage = "This is a testing tool to calculate the Self-Documentation of a software in which contains C# files.\n\n" +
+                     "1. Click 'Browse' to select a folder containing C# files.\n" +
+                     "2. The application will analyze each file and display the results in the table.\n" +
+                     "3. Click 'Export to CSV' to save the analysis results to a CSV file.\n" +
+                     "4. Click 'Reset' to clear the table and selected folder.";
+            MessageBox.Show(helpMessage, "User Guide", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void info_Click(object sender, EventArgs e)
+        {
+            string helpMessage = "Self-Documentation (McCall)\n\n" +
+                     "Self-Documentation is an aspect within the McCall factor that reflects the extent to which the application's source code can explain itself without requiring external interpretation.\n\n" +
+                     "In this context, Self-Documentation is assessed in terms of the number of comments that explain the functions present in the source code files.\n\n" +
+                     "How to Calculate Self-Documentation :\n\n" +
+                     "Calculate Total Function Comments : Identify and count the number of comments placed above the functions in the source code files.\n" +
+                     "Calculate Total Functions : Determine the total number of functions present in the source code files.\n" +
+                     "Calculate Self Documentation Ratio (SDR) : Calculate the ratio between the number of comments explaining functions and the total number of functions. The formula can be expressed as follows :\n" +
+                     "SDR = Number of Function Comments / Total Functions\n\n" +
+                     "On the other hand, calculating Self-Documentation can also be done by counting the number of comments explaining the code inside functions divided by the total number of all functions (in the second table).\n\n" +
+                     "As a conclusion, SDR provides an overview of how well each function in the source code is documented.";
+            MessageBox.Show(helpMessage, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

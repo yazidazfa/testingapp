@@ -466,6 +466,12 @@
     <Compile Include="DataCommonality.Designer.cs">
       <DependentUpon>DataCommonality.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorTolerance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ErrorTolerance.Designer.cs">
+      <DependentUpon>ErrorTolerance.cs</DependentUpon>
+    </Compile>
     <Compile Include="HalsteadCalculator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -571,6 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataCommonality.resx">
       <DependentUpon>DataCommonality.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorTolerance.resx">
+      <DependentUpon>ErrorTolerance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormControl.resx">
       <DependentUpon>FormControl.cs</DependentUpon>

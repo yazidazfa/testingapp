@@ -97,7 +97,7 @@ namespace CollectionOfTestingApp
             dataCommonality.Visible = false;
             halsteadCalculator.Visible = false;
             performanceExecution.Visible = false;
-
+            errorTolerance.Visible = false;
             
             
             //userGroup61.Visible = false;
@@ -157,6 +157,11 @@ namespace CollectionOfTestingApp
         private void button16_Click(object sender, EventArgs e)
         {
             userControl(cyclomaticComplexity);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            userControl(errorTolerance);
         }
     }
 }

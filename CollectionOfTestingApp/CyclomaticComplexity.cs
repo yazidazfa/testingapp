@@ -28,7 +28,7 @@ namespace CollectionOfTestingApp
         {
             OpenFileDialog openfile = new OpenFileDialog();
             // Set filter untuk file C dan C++
-            openfile.Filter = "C/C++ Files (*.c; *.cpp)|*.c;*.cpp|Java Files (*.java)|*.java|C# Files (*.cs)|*.cs|PHP Files (*.php)|*.php";
+            openfile.Filter = "Java Files (*.java)|*.java|C++ Files ( *.cpp)|*.cpp|C# Files (*.cs)|*.cs|PHP Files (*.php)|*.php";
 
             DialogResult result = openfile.ShowDialog();
 
@@ -73,7 +73,7 @@ namespace CollectionOfTestingApp
                 string code = File.ReadAllText(filePath);
 
                 // Hitung jumlah tepi
-                int jumlahTepi = HitungTepi(code);
+                int jumlahTepi = HitungEdge(code);
 
                 // Hitung jumlah simpul
                 int jumlahSimpul = HitungNode(code);
@@ -87,11 +87,11 @@ namespace CollectionOfTestingApp
                 string complexityCategory = KategorisasiKompleksitasSiklomata(komplesitasSiklomata);
 
                 // Menampilkan metrik di TextBox
-                string metrikMessage = $"Total Edges: {jumlahTepi}\r\n" +
-                                       $"Total Nodes: {jumlahSimpul}\r\n" +
+                string metrikMessage = $"FileName: {Path.GetFileName(filePath)}\r\n\n" +
+                                       $"Total Number of Edges: {jumlahTepi}\r\n" +
+                                       $"Total Number of Nodes: {jumlahSimpul}\r\n" +
                                        $"Total Number of Connected Components: {jumlahKomponen}\r\n" +
-                                       $"Cyclomatic Complexity (V(G) = E - N + 2P) = {komplesitasSiklomata}\r\n" +
-                                       $"Complexity Category: {complexityCategory}";
+                                       $"Cyclomatic Complexity (V(G) = E - N + 2P) = {komplesitasSiklomata}\r\n";
 
                 txtOutput.Text = metrikMessage;
                 uploadedFilePath = code;
@@ -119,7 +119,7 @@ namespace CollectionOfTestingApp
             }
         }
 
-        private static int HitungTepi(string code)
+        private static int HitungEdge(string code)
         {
             // Implementasi kompleksitas siklomatik di sini (gunakan metode sebelumnya atau metode lainnya)
             int edgeCount = 0;
@@ -272,14 +272,16 @@ namespace CollectionOfTestingApp
         private void btnHelp_Click(object sender, EventArgs e)
         {
             string helpMessage = "This testing tool is used to show the complexity of the program.\n" +
-                                 "You can upload files in these programming languages: C, C++, C#, Java, PHP.\n\n" +
+                                 "You can upload files in these programming languages: C++, C#, Java, PHP.\n" +
+                                 "if less than 10 is low, 10 - 20 is medium, dan more than 20 is high.\n\n" +
+
                                  "1. Click 'Upload File' to select a source code file.\n" +
                                  "2. Click 'Run' to calculate the metrics.\n" +
                                  "Metrics:\n" +
-                                 "- Total Edges (E) \n" +
-                                 "- Total Nodes (N) \n" +
+                                 "- Total Number of Edges (E) \n" +
+                                 "- Total Number of Nodes (N) \n" +
                                  "- Total Number of Connected Components (P) \n" +
-                                 "- McCabe Cyclomatic Complexity((V(G) = E - N + 2P)).\n" +
+                                 "- McCabe Cyclomatic Complexity ((V(G) = E - N + 2P)).\n" +
                                  "'If less than 10 is low, 10 - 20 is medium, more than 20 is complex'\n" +
                                  "3. Click 'Export CSV' to save data in a CSV file\n" +
                                  "4. Click 'Clear' to clear all data in this feature";
@@ -326,6 +328,38 @@ namespace CollectionOfTestingApp
             {
                 MessageBox.Show("No metrics to export", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string helpMessage = "This testing tool is used to show the complexity of the program.\n" +
+                                 "You can upload files in these programming languages: C++, C#, Java, PHP.\n" +
+                                 "if less than 10 is low, 10 - 20 is medium, dan more than 20 is high.\n\n" +
+
+                                 "1. Click 'Upload File' to select a source code file.\n" +
+                                 "2. Click 'Run' to calculate the metrics.\n" +
+                                 "Metrics:\n" +
+                                 "- Total Number of Edges (E) \n" +
+                                 "- Total Number of Nodes (N) \n" +
+                                 "- Total Number of Connected Components (P) \n" +
+                                 "- McCabe Cyclomatic Complexity ((V(G) = E - N + 2P)).\n" +
+                                 "'If less than 10 is low, 10 - 20 is medium, more than 20 is complex'\n" +
+                                 "3. Click 'Export CSV' to save data in a CSV file\n" +
+                                 "4. Click 'Clear' to clear all data in this feature";
+
+            MessageBox.Show(helpMessage, "Help", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string Info1Message = "Cyclomatic complexity is software metric that provides a quantitative measure of the logical complexity of a program (Pressman2001)\r\n\r\n" +
+                "to calculate cyclomatic complexity is as follows: \r\n\r\n" +
+                "McCabe Cyclomatic Complexity ((V(G) = E - N + 2P)) and to calculate each matrix is as follows:\r\n\n" +
+                "1. Counting the number of edges, you can count all the arrows or lines that connect the vertices in a control flow graph.\n" +
+                "2. Counting A node in a control flow graph represents a point in the program at which execution can begin or end.\n" +
+                "3. Calculating Connected Components is a group of nodes in a graph that are connected to each other, but not connected to nodes outside the group.";
+
+            MessageBox.Show(Info1Message, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

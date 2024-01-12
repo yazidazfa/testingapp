@@ -347,6 +347,29 @@ namespace CollectionOfTestingApp
         {
 
         }
+        private string showInfo()
+        {
+            StringBuilder info = new StringBuilder();
+
+            info.AppendLine("Task Duration:");
+            info.AppendLine("");
+            info.AppendLine("Task Duration is a pivotal aspect derived from the Software Quality Factors, playing a critical role in evaluating and enhancing the overall quality of software systems. This factor is rooted in McCall's Factor Models, with a specific focus on the Task Duration factor. Task Duration is particularly significant for assessing the efficiency and timeliness of completing tasks within software projects.");
+            info.AppendLine("");
+            info.AppendLine("How to acquire links that users go through:");
+            info.AppendLine("We are using a library called FiddlerCore from Telerik. it allow us to capture HTTP/HTTPS traffic that users go through.");
+            info.AppendLine("");
+            info.AppendLine("How to filter acquired links that users go through:");
+            info.AppendLine("1. We check each type of link content whether it includes text/html or not");
+            info.AppendLine("2. We exclude links that ends with .css, .js, and .png");
+
+            return info.ToString();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string info = showInfo();
+            MessageBox.Show(info, "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
         private bool Comparetext(string value)
         {

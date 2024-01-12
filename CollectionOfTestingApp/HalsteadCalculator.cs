@@ -171,5 +171,57 @@ namespace CollectionOfTestingApp
                 helpForm.ShowDialog();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            showHelpGuid();
+        }
+        private void showHelpGuid()
+        {
+            string helpGuid = GetherGuidMessage();
+            MessageBox.Show(helpGuid, "User Guide", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        private string GetherGuidMessage()
+        {
+            StringBuilder guidMessage = new StringBuilder();
+            guidMessage.AppendLine("Halstead Complexity Measures Metric - User Guide");
+            guidMessage.AppendLine("Getting Started:");
+            guidMessage.AppendLine("=================================================");
+            guidMessage.AppendLine();   
+            guidMessage.AppendLine("1. File Selection:");
+            guidMessage.AppendLine("Click on the 'Browse' button to select the PHP file you want to analyze.");
+            guidMessage.AppendLine("Alternatively, manually input the file path into the 'File Path' field.");
+            guidMessage.AppendLine("2. Displaying Code:");
+            guidMessage.AppendLine("Click on the 'Show Code' button to display the content of the selected PHP file in the 'Code Display' section.");
+            guidMessage.AppendLine("3. Analyzing Code:");
+            guidMessage.AppendLine("After displaying the code, the software will calculate unique operators and operands along with various Halstead Complexity Measures.");
+            guidMessage.AppendLine("The results will be shown in the 'Analysis Results' section.");
+            guidMessage.AppendLine("4. Interpreting Results:");
+            guidMessage.AppendLine("Review the counts of unique operators and operands.");
+            guidMessage.AppendLine("Examine the calculated Halstead Complexity Measures, including Program Length, Program Volume, Program Difficulty, Program Effort, and Expected Bugs.");
+            guidMessage.AppendLine("Notes:");
+            guidMessage.AppendLine("The software identifies operators based on common PHP operators and operands as variables starting with $.");
+            guidMessage.AppendLine("Exception handling is in place to provide feedback in case of errors during file reading or analysis.");
+
+            return guidMessage.ToString();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string list = Info();
+            MessageBox.Show(list, "Info :", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private string Info()
+        {
+            StringBuilder info = new StringBuilder();
+            info.AppendLine("The operator and operand are the lines of code that begins with the $ sign\r\n");
+            info.AppendLine("The program volume = Total Operators and Operands * Log2(Uniq Operator + Uniq Operands)\r\n");
+            info.AppendLine("The program difficulty = (Uniq Operators/2) * (Total Operands/Uniq Operands)\r\n");
+            info.AppendLine("The program effort = Program difficulty * Program effort\r\n");
+            info.AppendLine("The program exepted bugs = Program effort/3000\r\n");
+
+            return info.ToString();
+        }
     }
 }

@@ -29,7 +29,7 @@ namespace CollectionOfTestingApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.userGuide = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HalsteadCalculator));
             this.showCode = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
             this.operandsPath = new System.Windows.Forms.RichTextBox();
@@ -39,25 +39,15 @@ namespace CollectionOfTestingApp
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.filePath = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // userGuide
-            // 
-            this.userGuide.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.userGuide.Cursor = System.Windows.Forms.Cursors.Help;
-            this.userGuide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userGuide.Font = new System.Drawing.Font("Matura MT Script Capitals", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userGuide.Location = new System.Drawing.Point(966, 78);
-            this.userGuide.Margin = new System.Windows.Forms.Padding(2);
-            this.userGuide.Name = "userGuide";
-            this.userGuide.Size = new System.Drawing.Size(80, 80);
-            this.userGuide.TabIndex = 22;
-            this.userGuide.Text = "?";
-            this.userGuide.UseVisualStyleBackColor = false;
             // 
             // showCode
             // 
-            this.showCode.BackColor = System.Drawing.Color.Chartreuse;
+            this.showCode.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.showCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showCode.Location = new System.Drawing.Point(731, 277);
             this.showCode.Margin = new System.Windows.Forms.Padding(2);
@@ -70,7 +60,7 @@ namespace CollectionOfTestingApp
             // 
             // startBtn
             // 
-            this.startBtn.BackColor = System.Drawing.Color.Chartreuse;
+            this.startBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.Location = new System.Drawing.Point(310, 277);
             this.startBtn.Margin = new System.Windows.Forms.Padding(2);
@@ -83,8 +73,9 @@ namespace CollectionOfTestingApp
             // 
             // operandsPath
             // 
-            this.operandsPath.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.operandsPath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.operandsPath.BackColor = System.Drawing.SystemColors.Control;
+            this.operandsPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.operandsPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.operandsPath.Location = new System.Drawing.Point(261, 534);
             this.operandsPath.Margin = new System.Windows.Forms.Padding(2);
             this.operandsPath.Name = "operandsPath";
@@ -94,9 +85,9 @@ namespace CollectionOfTestingApp
             // 
             // analyzeResult
             // 
-            this.analyzeResult.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.analyzeResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.analyzeResult.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.analyzeResult.BackColor = System.Drawing.SystemColors.Control;
+            this.analyzeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.analyzeResult.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.analyzeResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.analyzeResult.Location = new System.Drawing.Point(608, 332);
             this.analyzeResult.Margin = new System.Windows.Forms.Padding(2);
@@ -107,8 +98,9 @@ namespace CollectionOfTestingApp
             // 
             // operatorsPath
             // 
-            this.operatorsPath.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.operatorsPath.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.operatorsPath.BackColor = System.Drawing.SystemColors.Control;
+            this.operatorsPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.operatorsPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.operatorsPath.Location = new System.Drawing.Point(261, 332);
             this.operatorsPath.Margin = new System.Windows.Forms.Padding(2);
             this.operatorsPath.Name = "operatorsPath";
@@ -118,11 +110,11 @@ namespace CollectionOfTestingApp
             // 
             // srcBtn
             // 
-            this.srcBtn.BackColor = System.Drawing.Color.Gray;
+            this.srcBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.srcBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.srcBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.srcBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.srcBtn.Location = new System.Drawing.Point(787, 208);
+            this.srcBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.srcBtn.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.srcBtn.Location = new System.Drawing.Point(860, 211);
             this.srcBtn.Margin = new System.Windows.Forms.Padding(2);
             this.srcBtn.Name = "srcBtn";
             this.srcBtn.Size = new System.Drawing.Size(109, 35);
@@ -135,7 +127,7 @@ namespace CollectionOfTestingApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(255, 208);
+            this.label2.Location = new System.Drawing.Point(184, 208);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 31);
@@ -150,26 +142,53 @@ namespace CollectionOfTestingApp
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(336, 48);
+            this.label1.Size = new System.Drawing.Size(273, 48);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Halstead Calculator";
+            this.label1.Text = "Halstead Metric";
             // 
             // filePath
             // 
             this.filePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.filePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filePath.Location = new System.Drawing.Point(411, 203);
+            this.filePath.Location = new System.Drawing.Point(348, 208);
             this.filePath.Margin = new System.Windows.Forms.Padding(2);
             this.filePath.Multiline = true;
             this.filePath.Name = "filePath";
             this.filePath.Size = new System.Drawing.Size(491, 45);
             this.filePath.TabIndex = 13;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox1.InitialImage = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox1.Location = new System.Drawing.Point(1133, 807);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 45);
+            this.pictureBox1.TabIndex = 47;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(1084, 809);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox2.TabIndex = 48;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // HalsteadCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.userGuide);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.showCode);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.operandsPath);
@@ -182,14 +201,14 @@ namespace CollectionOfTestingApp
             this.Location = new System.Drawing.Point(255, 0);
             this.Name = "HalsteadCalculator";
             this.Size = new System.Drawing.Size(1183, 854);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button userGuide;
         private System.Windows.Forms.Button showCode;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.RichTextBox operandsPath;
@@ -199,5 +218,7 @@ namespace CollectionOfTestingApp
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox filePath;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

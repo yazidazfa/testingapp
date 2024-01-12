@@ -533,6 +533,16 @@ namespace CollectionOfTestingApp
             currentRoundNumber = 1;
             currentEvaluationRoundNumber = 1;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            ShowInfoMessageBox();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ShowHelpMessageBox();
+        }
     }
 
     public class LoadTestResult

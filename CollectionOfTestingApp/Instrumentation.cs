@@ -15,6 +15,7 @@ namespace CollectionOfTestingApp
     public partial class Instrumentation : UserControl
     {
         private string pathSourceCode;
+        private string filePathName;
         public Instrumentation()
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace CollectionOfTestingApp
             {
                 pathSourceCode = ofd.FileName;
                 txtPath.Text = ofd.FileName;
+                filePathName = ofd.FileName;        
                 textSourceCode.Text = ReadSourceCode(pathSourceCode);
             }
         }
@@ -214,7 +216,6 @@ namespace CollectionOfTestingApp
             {
                 int instrument = CountInstrument(pathSourceCode);
                 int totalItemCode = CountTotalItem(pathSourceCode);
-
                 string sourceCode = ReadSourceCode(pathSourceCode);
                 int totalLog = CountLogging(sourceCode);
                 int totErrHand = CountErrorHandling(sourceCode);
@@ -231,10 +232,49 @@ namespace CollectionOfTestingApp
                     {
                         string folderPath = folderBrowserDialog.SelectedPath;
                         processUI(totalLog, totErrHand, totControl, totInOut, totFunc, instrument, totalItemCode, persentaseInstrumentasi);
-                        ExportToCSV(folderPath, "instrumentation.csv", totalLog, totErrHand, totControl, totInOut, totFunc, instrument, totalItemCode, persentaseInstrumentasi);
+
+                        string filename = Path.GetFileName(filePathName);
+                        ExportToCSV(folderPath, $"{filename}.csv", totalLog, totErrHand, totControl, totInOut, totFunc, instrument, totalItemCode, persentaseInstrumentasi);
                     }
                 }
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            string message = "Help:\n" +
+              "1. Press the browse file button\n" +
+              "2. Select and open the file\n" +
+              "3. Press the check button to calculate the percentage\n" +
+              "4. The result will be displayed\n" +
+              "5. Data in the table are criteria for calculating the formula\n" +
+              "6. The percentage result is located outside the table\n\n" +
+              "Important Information: Criteria for testing files or source code:\n" +
+              "1. Using C# or Typescript programming language\n" +
+              "2. Using object-oriented programming paradigm\n" +
+              "3. For C#, using third-party logging with Serilog\n" +
+              "4. For Typescript, using third-party logging with Winston";
+
+
+            MessageBox.Show(message, "Help", MessageBoxButtons.OK);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            string message = "Info:\n" +
+                "Instrumentation is the degree to which a program monitors its own operations and identify errors that occur. (source: SERI 999 E-ARTIKEL SISTEM DAN TEKNOLOGI INFORMASI, Kriteria Penjamin Kualitas Perangkat Lunak by Prof. Richardus Eko Indrajit)\n\n" +
+                "How to measure instrumentation:\n" +
+                "1. Number of logging error: The computation is conducted by identifying word patterns incorporated in logging management through regular expressions. The patterns to be sought encompass 'log.error', 'any-word.error', 'any-word.Error', and 'Error('.\n" +
+                "2. Number of error exception: The computation is conducted by scrutinizing word patterns embedded in error handling through the utilization of regular expressions. The specific pattern to be identified is denoted as 'catch (any word)'.\n" +
+                "3. Number of control flow: The calculation is done by looking for word patterns included in the control flow using regex. The patterns to look for are 'if', 'else', 'for', 'while', 'switch', 'case', 'do', and 'foreach'.\n" +
+                "4. Number of input output: The computation involves identifying word patterns within input-output operations using regular expressions. The specific patterns to be sought include Console.Read(any word), Console.Write(any word), Console.Error.Write(any word), readlineSync.question, readlineSync.questionInt, fs.readFile, fs.writeFile, and fetch. \n" +
+                "5. Number of methods: The computation is performed through the identification of word patterns incorporated in the writing methodology utilizing regular expressions (regex). Typically, methodologies are articulated with preceding visibility indicators adhering to a specified pattern, namely 'public', 'private', 'protected', or 'internal' the inclusion of these indicators is optional. Subsequently, the methodology may be optionally preceded by the term 'static'. Following this, the pattern seeks to match the data type associated with the return value of the function, followed by the matching of the function name, and concluded by a delimiter '(any word)'.\n" +
+                "6. Total instrument: The computation is conducted by summing the cumulative values of logging and error handling.\n" +
+                "7. Total item should be instrumented: The computation is performed by aggregating the total number of methods, total input-output instances, and total control flow occurrences.\n" +
+                "8. The instrumentation percentage is calculated using the formula number of instruments/number of items that should be instrumented * 100.\n";
+
+
+            MessageBox.Show(message, "Help", MessageBoxButtons.OK);
         }
     }
 }

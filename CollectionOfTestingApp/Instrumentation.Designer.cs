@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Instrumentation));
             this.exportCsv = new System.Windows.Forms.Button();
-            this.btnHelp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.totInstrument = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +46,11 @@
             this.btnBrowse = new System.Windows.Forms.Button();
             this.lb_Instrumentation = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // exportCsv
@@ -54,28 +58,14 @@
             this.exportCsv.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.exportCsv.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exportCsv.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.exportCsv.Location = new System.Drawing.Point(988, 736);
-            this.exportCsv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.exportCsv.Location = new System.Drawing.Point(988, 711);
+            this.exportCsv.Margin = new System.Windows.Forms.Padding(2);
             this.exportCsv.Name = "exportCsv";
             this.exportCsv.Size = new System.Drawing.Size(124, 42);
             this.exportCsv.TabIndex = 32;
             this.exportCsv.Text = "Export CSV";
             this.exportCsv.UseVisualStyleBackColor = false;
             this.exportCsv.Click += new System.EventHandler(this.exportCsv_Click);
-            // 
-            // btnHelp
-            // 
-            this.btnHelp.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHelp.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnHelp.Location = new System.Drawing.Point(997, 144);
-            this.btnHelp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnHelp.Name = "btnHelp";
-            this.btnHelp.Size = new System.Drawing.Size(115, 42);
-            this.btnHelp.TabIndex = 31;
-            this.btnHelp.Text = "Help";
-            this.btnHelp.UseVisualStyleBackColor = false;
-            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
             // label2
             // 
@@ -94,7 +84,7 @@
             this.totInstrument.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totInstrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totInstrument.Location = new System.Drawing.Point(899, 519);
-            this.totInstrument.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.totInstrument.Margin = new System.Windows.Forms.Padding(2);
             this.totInstrument.Multiline = true;
             this.totInstrument.Name = "totInstrument";
             this.totInstrument.Size = new System.Drawing.Size(214, 40);
@@ -118,7 +108,7 @@
             this.totalItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalItem.Location = new System.Drawing.Point(899, 582);
-            this.totalItem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.totalItem.Margin = new System.Windows.Forms.Padding(2);
             this.totalItem.Multiline = true;
             this.totalItem.Name = "totalItem";
             this.totalItem.Size = new System.Drawing.Size(214, 42);
@@ -143,7 +133,7 @@
             this.totIns,
             this.total});
             this.dataGridView.Location = new System.Drawing.Point(563, 266);
-            this.dataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 62;
             this.dataGridView.RowTemplate.Height = 28;
@@ -169,7 +159,7 @@
             // 
             this.textSourceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSourceCode.Location = new System.Drawing.Point(45, 266);
-            this.textSourceCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textSourceCode.Margin = new System.Windows.Forms.Padding(2);
             this.textSourceCode.Multiline = true;
             this.textSourceCode.Name = "textSourceCode";
             this.textSourceCode.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -193,7 +183,7 @@
             this.txtPersentase.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPersentase.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPersentase.Location = new System.Drawing.Point(820, 643);
-            this.txtPersentase.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPersentase.Margin = new System.Windows.Forms.Padding(2);
             this.txtPersentase.Multiline = true;
             this.txtPersentase.Name = "txtPersentase";
             this.txtPersentase.Size = new System.Drawing.Size(293, 43);
@@ -206,7 +196,7 @@
             this.btnCountInstrument.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCountInstrument.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCountInstrument.Location = new System.Drawing.Point(858, 144);
-            this.btnCountInstrument.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCountInstrument.Margin = new System.Windows.Forms.Padding(2);
             this.btnCountInstrument.Name = "btnCountInstrument";
             this.btnCountInstrument.Size = new System.Drawing.Size(120, 42);
             this.btnCountInstrument.TabIndex = 21;
@@ -219,7 +209,7 @@
             this.txtPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPath.Location = new System.Drawing.Point(199, 149);
-            this.txtPath.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPath.Margin = new System.Windows.Forms.Padding(2);
             this.txtPath.Multiline = true;
             this.txtPath.Name = "txtPath";
             this.txtPath.Size = new System.Drawing.Size(629, 31);
@@ -231,7 +221,7 @@
             this.btnBrowse.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBrowse.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnBrowse.Location = new System.Drawing.Point(45, 144);
-            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBrowse.Margin = new System.Windows.Forms.Padding(2);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(122, 42);
             this.btnBrowse.TabIndex = 19;
@@ -261,14 +251,41 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "Result";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox1.InitialImage = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
+            this.pictureBox1.Location = new System.Drawing.Point(1106, 762);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 45);
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(1057, 764);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 45);
+            this.pictureBox2.TabIndex = 47;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // Instrumentation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lb_Instrumentation);
             this.Controls.Add(this.exportCsv);
-            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.totInstrument);
             this.Controls.Add(this.label1);
@@ -282,10 +299,12 @@
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnBrowse);
             this.Location = new System.Drawing.Point(255, 0);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Instrumentation";
-            this.Size = new System.Drawing.Size(1156, 892);
+            this.Size = new System.Drawing.Size(1156, 809);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,7 +313,6 @@
         #endregion
 
         private System.Windows.Forms.Button exportCsv;
-        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox totInstrument;
         private System.Windows.Forms.Label label1;
@@ -311,5 +329,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn totIns;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
