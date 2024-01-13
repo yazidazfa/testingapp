@@ -334,8 +334,7 @@ namespace CollectionOfTestingApp
         {
             string helpMessage = "This testing tool is used to show the complexity of the program.\n" +
                                  "You can upload files in these programming languages: C++, C#, Java, PHP.\n" +
-                                 "if less than 10 is low, 10 - 20 is medium, dan more than 20 is high.\n\n" +
-
+                                 
                                  "1. Click 'Upload File' to select a source code file.\n" +
                                  "2. Click 'Run' to calculate the metrics.\n" +
                                  "Metrics:\n" +

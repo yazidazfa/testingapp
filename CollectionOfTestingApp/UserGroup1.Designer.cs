@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserGroup1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tb_listurlnotfiltered = new System.Windows.Forms.TextBox();
             this.tb_listurl = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,10 +47,9 @@
             this.lblStart = new System.Windows.Forms.Label();
             this.tbStopUrl = new System.Windows.Forms.TextBox();
             this.tbStartUrl = new System.Windows.Forms.TextBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -78,9 +78,22 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
+            this.pictureBox2.Location = new System.Drawing.Point(1070, 805);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(45, 49);
+            this.pictureBox2.TabIndex = 49;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
             // tb_listurlnotfiltered
             // 
-            this.tb_listurlnotfiltered.Location = new System.Drawing.Point(129, 447);
+            this.tb_listurlnotfiltered.Location = new System.Drawing.Point(134, 431);
             this.tb_listurlnotfiltered.Multiline = true;
             this.tb_listurlnotfiltered.Name = "tb_listurlnotfiltered";
             this.tb_listurlnotfiltered.ReadOnly = true;
@@ -90,7 +103,7 @@
             // 
             // tb_listurl
             // 
-            this.tb_listurl.Location = new System.Drawing.Point(628, 447);
+            this.tb_listurl.Location = new System.Drawing.Point(628, 431);
             this.tb_listurl.Multiline = true;
             this.tb_listurl.Name = "tb_listurl";
             this.tb_listurl.ReadOnly = true;
@@ -102,7 +115,7 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::CollectionOfTestingApp.Properties.Resources.help_FILL0_wght400_GRAD0_opsz48;
-            this.pictureBox1.Location = new System.Drawing.Point(1119, 786);
+            this.pictureBox1.Location = new System.Drawing.Point(1119, 801);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 45);
@@ -114,12 +127,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 31.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(467, 91);
+            this.label1.Location = new System.Drawing.Point(390, 93);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 51);
+            this.label1.Size = new System.Drawing.Size(454, 51);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Task Duration";
+            this.label1.Text = "Task Duration Counter";
             // 
             // btnExport
             // 
@@ -151,7 +164,7 @@
             // 
             this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(552, 315);
+            this.btnSubmit.Location = new System.Drawing.Point(552, 314);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(2);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(112, 49);
@@ -215,7 +228,7 @@
             // lblStopwatch
             // 
             this.lblStopwatch.Font = new System.Drawing.Font("Segoe UI", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStopwatch.Location = new System.Drawing.Point(505, 400);
+            this.lblStopwatch.Location = new System.Drawing.Point(492, 378);
             this.lblStopwatch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStopwatch.Name = "lblStopwatch";
             this.lblStopwatch.Size = new System.Drawing.Size(216, 50);
@@ -260,19 +273,6 @@
             this.tbStartUrl.Size = new System.Drawing.Size(384, 23);
             this.tbStartUrl.TabIndex = 7;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(1070, 789);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 49);
-            this.pictureBox2.TabIndex = 49;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
             // UserGroup1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,8 +284,8 @@
             this.Size = new System.Drawing.Size(1333, 854);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

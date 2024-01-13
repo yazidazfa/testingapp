@@ -49,7 +49,7 @@ namespace CollectionOfTestingApp
             // 
             this.showCode.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.showCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.showCode.Location = new System.Drawing.Point(731, 277);
+            this.showCode.Location = new System.Drawing.Point(733, 248);
             this.showCode.Margin = new System.Windows.Forms.Padding(2);
             this.showCode.Name = "showCode";
             this.showCode.Size = new System.Drawing.Size(153, 36);
@@ -62,7 +62,7 @@ namespace CollectionOfTestingApp
             // 
             this.startBtn.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startBtn.Location = new System.Drawing.Point(310, 277);
+            this.startBtn.Location = new System.Drawing.Point(312, 248);
             this.startBtn.Margin = new System.Windows.Forms.Padding(2);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(153, 36);
@@ -73,10 +73,10 @@ namespace CollectionOfTestingApp
             // 
             // operandsPath
             // 
-            this.operandsPath.BackColor = System.Drawing.SystemColors.Control;
+            this.operandsPath.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.operandsPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.operandsPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.operandsPath.Location = new System.Drawing.Point(261, 534);
+            this.operandsPath.Location = new System.Drawing.Point(263, 505);
             this.operandsPath.Margin = new System.Windows.Forms.Padding(2);
             this.operandsPath.Name = "operandsPath";
             this.operandsPath.Size = new System.Drawing.Size(321, 199);
@@ -85,11 +85,11 @@ namespace CollectionOfTestingApp
             // 
             // analyzeResult
             // 
-            this.analyzeResult.BackColor = System.Drawing.SystemColors.Control;
+            this.analyzeResult.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.analyzeResult.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.analyzeResult.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.analyzeResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.analyzeResult.Location = new System.Drawing.Point(608, 332);
+            this.analyzeResult.Location = new System.Drawing.Point(610, 303);
             this.analyzeResult.Margin = new System.Windows.Forms.Padding(2);
             this.analyzeResult.Name = "analyzeResult";
             this.analyzeResult.Size = new System.Drawing.Size(323, 401);
@@ -98,10 +98,10 @@ namespace CollectionOfTestingApp
             // 
             // operatorsPath
             // 
-            this.operatorsPath.BackColor = System.Drawing.SystemColors.Control;
+            this.operatorsPath.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.operatorsPath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.operatorsPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.operatorsPath.Location = new System.Drawing.Point(261, 332);
+            this.operatorsPath.Location = new System.Drawing.Point(263, 303);
             this.operatorsPath.Margin = new System.Windows.Forms.Padding(2);
             this.operatorsPath.Name = "operatorsPath";
             this.operatorsPath.Size = new System.Drawing.Size(321, 183);
@@ -114,7 +114,7 @@ namespace CollectionOfTestingApp
             this.srcBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.srcBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.srcBtn.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.srcBtn.Location = new System.Drawing.Point(860, 211);
+            this.srcBtn.Location = new System.Drawing.Point(862, 182);
             this.srcBtn.Margin = new System.Windows.Forms.Padding(2);
             this.srcBtn.Name = "srcBtn";
             this.srcBtn.Size = new System.Drawing.Size(109, 35);
@@ -127,7 +127,7 @@ namespace CollectionOfTestingApp
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(184, 208);
+            this.label2.Location = new System.Drawing.Point(186, 179);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 31);
@@ -138,7 +138,7 @@ namespace CollectionOfTestingApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Geometr706 BlkCn BT", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(433, 120);
+            this.label1.Location = new System.Drawing.Point(435, 91);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -150,7 +150,7 @@ namespace CollectionOfTestingApp
             // 
             this.filePath.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.filePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filePath.Location = new System.Drawing.Point(348, 208);
+            this.filePath.Location = new System.Drawing.Point(350, 179);
             this.filePath.Margin = new System.Windows.Forms.Padding(2);
             this.filePath.Multiline = true;
             this.filePath.Name = "filePath";

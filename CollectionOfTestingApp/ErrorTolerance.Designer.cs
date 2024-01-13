@@ -29,7 +29,7 @@ namespace CollectionOfTestingApp
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ErrorTolerance));
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -57,7 +57,7 @@ namespace CollectionOfTestingApp
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(62, 698);
+            this.button4.Location = new System.Drawing.Point(54, 677);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(277, 36);
             this.button4.TabIndex = 28;
@@ -68,7 +68,7 @@ namespace CollectionOfTestingApp
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(62, 647);
+            this.button3.Location = new System.Drawing.Point(54, 626);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(277, 36);
             this.button3.TabIndex = 27;
@@ -83,17 +83,17 @@ namespace CollectionOfTestingApp
             this.dataGridViewResults.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewResults.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridViewResults.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DimGray;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DimGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewResults.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewResults.Location = new System.Drawing.Point(358, 251);
+            this.dataGridViewResults.Location = new System.Drawing.Point(350, 230);
             this.dataGridViewResults.Name = "dataGridViewResults";
             this.dataGridViewResults.Size = new System.Drawing.Size(766, 483);
             this.dataGridViewResults.TabIndex = 23;
@@ -105,7 +105,7 @@ namespace CollectionOfTestingApp
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButtonPython);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(69, 251);
+            this.groupBox1.Location = new System.Drawing.Point(61, 230);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(270, 171);
             this.groupBox1.TabIndex = 25;
@@ -162,7 +162,7 @@ namespace CollectionOfTestingApp
             // Folder
             // 
             this.Folder.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Folder.Location = new System.Drawing.Point(207, 431);
+            this.Folder.Location = new System.Drawing.Point(199, 410);
             this.Folder.Name = "Folder";
             this.Folder.Size = new System.Drawing.Size(132, 36);
             this.Folder.TabIndex = 24;
@@ -173,7 +173,7 @@ namespace CollectionOfTestingApp
             // buttonBrowseFile
             // 
             this.buttonBrowseFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBrowseFile.Location = new System.Drawing.Point(62, 431);
+            this.buttonBrowseFile.Location = new System.Drawing.Point(54, 410);
             this.buttonBrowseFile.Name = "buttonBrowseFile";
             this.buttonBrowseFile.Size = new System.Drawing.Size(132, 36);
             this.buttonBrowseFile.TabIndex = 20;
@@ -194,7 +194,7 @@ namespace CollectionOfTestingApp
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox2.Location = new System.Drawing.Point(444, 81);
+            this.textBox2.Location = new System.Drawing.Point(436, 60);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(312, 46);
@@ -207,7 +207,7 @@ namespace CollectionOfTestingApp
             this.textBox1.BackColor = System.Drawing.SystemColors.Control;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox1.Location = new System.Drawing.Point(358, 194);
+            this.textBox1.Location = new System.Drawing.Point(350, 173);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(766, 36);
@@ -218,7 +218,7 @@ namespace CollectionOfTestingApp
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(62, 482);
+            this.button1.Location = new System.Drawing.Point(54, 461);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(277, 36);
             this.button1.TabIndex = 18;
@@ -233,7 +233,7 @@ namespace CollectionOfTestingApp
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox3.Location = new System.Drawing.Point(723, 740);
+            this.textBox3.Location = new System.Drawing.Point(715, 719);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
